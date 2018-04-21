@@ -9,3 +9,7 @@ The syntax highlighting is converted from the Atom editor [language-asl](https:/
 ### Install
 
 clone this repo into your Sublime `Packages` folder.
+
+### License
+
+[MIT](http://opensource.org/licenses/MIT)
