@@ -8,7 +8,8 @@ The syntax highlighting is converted from the Atom editor [language-asl](https:/
 
 ### Install
 
-clone this repo into your Sublime `Packages` folder.
+- Via Package Control: search for `ASL Syntax Highlight`.
+- Manual: clone this repo into your Sublime `Packages` folder.
 
 ### License
 
