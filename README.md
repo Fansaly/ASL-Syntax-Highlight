@@ -12,4 +12,4 @@ clone this repo into your Sublime `Packages` folder.
 
 ### License
 
-[MIT](http://opensource.org/licenses/MIT)
+[MIT](https://opensource.org/licenses/MIT)
