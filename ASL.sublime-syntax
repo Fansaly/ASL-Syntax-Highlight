@@ -1,0 +1,306 @@
+%YAML 1.2
+---
+name: ASL
+version: 2
+file_extensions:
+  - asl
+  - dsl
+  - asi
+first_line_match: '(?i)^\s*(?:DefinitionBlock\b|#\s*(?:include|includebuffer|define)\b)'
+scope: source.asl
+
+variables:
+  name_seg: '[A-Za-z_][A-Za-z0-9_]{0,3}'
+  name_path: '(?<![A-Za-z0-9_])(\\|(?:\^+)?)({{name_seg}}(?:\.{{name_seg}})*)(?![A-Za-z0-9_])'
+  declarations: '(?i:Alias|BankField|DataTableRegion|DefinitionBlock|Device|Event|External|Field|Function|IndexField|Method|Mutex|Name|OperationRegion|PowerResource|Processor|Scope|ThermalZone)'
+  control: '(?i:Break|BreakPoint|Case|Continue|Default|Else|ElseIf|If|Return|Switch|While)'
+  builtins: '(?i:AccessAs|Acquire|Add|And|Buffer|Concatenate|ConcatenateResTemplate|CondRefOf|Connection|CopyObject|CreateBitField|CreateByteField|CreateDWordField|CreateField|CreateQWordField|CreateWordField|Decrement|DeRefOf|Divide|Eisaid|Fatal|FindSetLeftBit|FindSetRightBit|fprintf|FromBcd|Include|Increment|Index|LAnd|LEqual|LGreater|LGreaterEqual|LLess|LLessEqual|LNot|LNotEqual|Load|LoadTable|LOr|Match|Mid|Mod|Multiply|NAnd|Noop|NOr|Not|Notify|ObjectType|Offset|Or|Package|printf|RefOf|Release|Reset|ShiftLeft|ShiftRight|Signal|SizeOf|Sleep|Stall|Store|Subtract|Timer|ToBcd|ToBuffer|ToDecimalString|ToHexString|ToInteger|ToPLD|ToString|ToUuid|Unicode|Unload|Wait|XOr)'
+  resources: '(?i:ClockInput|Csi2Bus|DMA|DWordIO|DWordMemory|DWordPcc|DWordSpace|EndDependentFn|ExtendedIO|ExtendedMemory|ExtendedSpace|FixedDma|FixedIO|GpioInt|GpioIo|I2cSerialBus|I2cSerialBusV2|Interrupt|IO|IRQ|IRQNoFlags|Memory24|Memory32|Memory32Fixed|PinConfig|PinFunction|PinGroup|PinGroupConfig|PinGroupFunction|QWordIO|QWordMemory|QWordPcc|QWordSpace|RawDataBuffer|Register|ResourceTemplate|SpiSerialBus|SpiSerialBusV2|StartDependentFn|StartDependentFnNoPri|UartSerialBus|UartSerialBusV2|VendorLong|VendorShort|WordBusNumber|WordIO|WordPcc|WordSpace)'
+  flags: '(?i:ActiveBoth|ActiveHigh|ActiveLow|AddressingMode10Bit|AddressingMode7Bit|AddressRangeACPI|AddressRangeMemory|AddressRangeNVS|AddressRangeReserved|AnyAcc|AttribBlock|AttribBlockProcessCall|AttribByte|AttribBytes|AttribProcessCall|AttribQuick|AttribRawBytes|AttribRawProcessBytes|AttribSendReceive|AttribWord|BigEndian|BufferAcc|BuffFieldObj|BuffObj|BusMaster|ByteAcc|Cacheable|ClockPhaseFirst|ClockPhaseSecond|ClockPolarityHigh|ClockPolarityLow|Compatibility|ControllerInitiated|DataBitsEight|DataBitsFive|DataBitsNine|DataBitsSeven|DataBitsSix|DDBHandleObj|Decode10|Decode16|DenseTranslation|DeviceInitiated|DeviceObj|DWordAcc|Edge|EmbeddedControl|EntireRange|EventObj|Exclusive|ExclusiveAndWake|FFixedHW|FieldUnitObj|Fixed|FlowControlHardware|FlowControlNone|FlowControlXon|FourWireMode|GeneralPurposeIo|GenericSerialBus|Hz|IntObj|IoRestrictionInputOnly|IoRestrictionNone|IoRestrictionNoneAndPreserve|IoRestrictionOutputOnly|IPMI|ISAOnlyRanges|KHz|Level|LittleEndian|Lock|MaxFixed|MaxNotFixed|MEQ|MethodObj|MGE|MGT|MHz|MinFixed|MinNotFixed|MLE|MLT|MTR|MutexObj|NoLock|NonCacheable|NonISAOnlyRanges|NotBusMaster|NotSerialized|OpRegionObj|ParityTypeEven|ParityTypeMark|ParityTypeNone|ParityTypeOdd|ParityTypeSpace|PCC|PCI_Config|PciBarTarget|PkgObj|PlatformRtMechanism|PLD_Bay|PLD_Blue|PLD_CabinetNumber|PLD_CardCageNumber|PLD_Dock|PLD_Ejectable|PLD_EjectRequired|PLD_Green|PLD_GroupOrientation|PLD_GroupPosition|PLD_GroupToken|PLD_Height|PLD_HorizontalOffset|PLD_HorizontalPosition|PLD_IgnoreColor|PLD_Lid|PLD_Order|PLD_Panel|PLD_Red|PLD_Reference|PLD_Reserved|PLD_Revision|PLD_Rotation|PLD_Shape|PLD_UserVisible|PLD_VerticalOffset|PLD_VerticalPosition|PLD_Width|PolarityHigh|PolarityLow|PosDecode|PowerResObj|Prefetchable|Preserve|ProcessorObj|PullDefault|PullDown|PullNone|PullUp|QWordAcc|ReadOnly|ReadWrite|ResourceConsumer|ResourceProducer|Serialized|Shared|SharedAndWake|SMBBlock|SMBBlockProcessCall|SMBByte|SMBProcessCall|SMBQuick|SMBSendReceive|SMBus|SMBWord|SparseTranslation|StopBitsOne|StopBitsOnePlusHalf|StopBitsTwo|StopBitsZero|StrObj|SubDecode|SystemCMOS|SystemIO|SystemMemory|ThermalZoneObj|ThreeWireMode|Transfer16|Transfer8|Transfer8_16|TypeA|TypeB|TypeF|TypeStatic|TypeTranslation|UnknownObj|Variable|Width128bit|Width16bit|Width256bit|Width32bit|Width64bit|Width8bit|WordAcc|WriteAsOnes|WriteAsZeros|WriteCombining)'
+  constants: '(?i:Debug|One|Ones|Revision|Zero)'
+  arg_local: '(?i:Arg[0-6]|Local[0-7])'
+  predefined: '(?i:_AC[0-9]|_ADR|_AEI|_ALC|_ALI|_ALN|_ALP|_ALR|_ALT|_AL[0-9]|_ART|_ASI|_ASZ|_ATT|_BAS|_BBN|_BCL|_BCM|_BCT|_BDN|_BFS|_BIF|_BIX|_BLT|_BM_?|_BMA|_BMC|_BMD|_BMS|_BPC|_BPS|_BPT|_BQC|_BST|_BTH|_BTM|_BTP|_CBA|_CBR|_CCA|_CDM|_CID|_CLS|_CPC|_CR3|_CRS|_CRT|_CSD|_CST|_CWS|_DBT|_DCK|_DCS|_DDC|_DDN|_DEC|_DEP|_DGS|_DIS|_DLM|_DMA|_DOD|_DOS|_DSC|_DPL|_DRS|_DSD|_DSM|_DSS|_DSW|_DTI|_E[0-9A-F]{2}|_EC_?|_EDL|_EJD|_EJ[0-9]|_END|_EVT|_FDE|_FDI|_FDM|_FIF|_FIT|_FIX|_FLC|_FPS|_FSL|_FST|_FUN|_GAI|_GCP|_GHL|_GL_?|_GLK|_GPD|_GPE|_GRA|_GRT|_GSB|_GTF|_GTM|_GTS|_GWS|_HE_?|_HID|_HMA|_HOT|_HPP|_HPX|_VDM|_HRV|_IFT|_INI|_INT|_IOR|_IRC|_I[0-9A-F]{2}|_L[0-9A-F]{2}|_LCK|_LEN|_LID|_LIN|_LL_?|_LPD|_LPI|_LSI|_LSR|_LSW|_MAF|_MAT|_MAX|_MBM|_MEM|_MIF|_MIN|_MLS|_MOD|_MSG|_MSM|_MTL|_MTP|_NBS|_NCH|_NIC|_NIG|_NIH|_NTT|_OFF|_ON_?|_OS_?|_OSC|_OSI|_OST|_PAI|_PAR|_PCL|_PCT|_PDC|_PDL|_PHA|_PIC|_PIF|_PIN|_PLD|_PMC|_PMD|_PMM|_POL|_PPC|_PPE|_PPI|_PR|_PR0|_PR1|_PR2|_PR3|_PRE|_PRL|_PRR|_PRS|_PRT|_PRW|_PS0|_PS1|_PS2|_PS3|_PSC|_PSD|_PSE|_PSL|_PSR|_PSS|_PSV|_PSW|_PTC|_PTP|_PTS|_PUR|_PXM|_Q[0-9A-F]{2}|_RBO|_RBW|_RDI|_REG|_REV|_RMV|_RNG|_RST|_ROM|_RT_?|_RTV|_RW_?|_RXL|_S0_?|_S1_?|_S2_?|_S3_?|_S4_?|_S5_?|_S1D|_S2D|_S3D|_S4D|_S0W|_S1W|_S2W|_S3W|_S4W|_SB_?|_SBA|_SBI|_SBR|_SBT|_SBW|_SBS|_SCP|_SDD|_SEG|_SHL|_SHR|_SI_?|_SIZ|_SLI|_SLV|_SPD|_SPE|_SRS|_SRT|_SRV|_SST|_STA|_STB|_STM|_STP|_STR|_STV|_SUB|_SUN|_SWS|_T_[0-9]|_TC1|_TC2|_TDL|_TFP|_TIP|_TIV|_TMP|_TPC|_TPT|_TRA|_TRS|_TRT|_TSD|_TSF|_TSN|_TSP|_TSS|_TST|_TTP|_TTS|_TXL|_TYP|_TZ_?|_TZD|_TZM|_TZP|_UID|_UPC|_UPD|_UPP|_VAL|_VEN|_VPO|_W[0-9A-F]{2}|_WAK|_WPC|_WPP)'
+  preprocessor: '(?i:include|includebuffer|define|undef|if|ifdef|ifndef|elif|else|endif|line|error|warning|pragma)'
+  builtin_macros: '(?i:__DATE__|__FILE__|__LINE__|__METHOD__|__PATH__|__IASL__)'
+
+contexts:
+  main:
+    - include: comments
+    - include: preprocessor
+    - include: strings
+    - include: constants
+    - include: numbers
+    - include: declarations
+    - include: control
+    - include: resource-macros
+    - include: builtins
+    - include: flags
+    - include: variables
+    - include: predefined-names
+    - include: names
+    - include: operators
+    - include: punctuation
+
+  comments:
+    - match: '^\s*/\*\s*=\s*(.*?)\s*=\s*\*/$'
+      scope: comment.block.banner.asl
+      captures:
+        1: meta.toc-list.banner.block.asl
+    - match: /\*
+      scope: punctuation.definition.comment.begin.asl
+      push: comment-block
+    - match: \*/
+      scope: invalid.illegal.stray-comment-end.asl
+    - match: '^\s*//\s*=\s*(.*?)\s*=\s*$'
+      scope: comment.line.banner.asl
+      captures:
+        1: meta.toc-list.banner.line.asl
+    - match: //
+      scope: punctuation.definition.comment.begin.asl
+      push: comment-line
+
+  comment-block:
+    - meta_scope: comment.block.asl
+    - meta_include_prototype: false
+    - match: \*/
+      scope: punctuation.definition.comment.end.asl
+      pop: true
+
+  comment-line:
+    - meta_scope: comment.line.double-slash.asl
+    - meta_include_prototype: false
+    - match: $
+      pop: true
+
+  preprocessor:
+    - match: '^\s*(#)\s*(include|includebuffer)\b'
+      captures:
+        1: punctuation.definition.preprocessor.asl
+        2: keyword.control.import.asl
+      set: preprocessor-line
+    - match: '^\s*(#)\s*({{preprocessor}})\b'
+      captures:
+        1: punctuation.definition.preprocessor.asl
+        2: keyword.control.directive.asl
+      set: preprocessor-line
+    - match: '\b({{builtin_macros}})\b'
+      captures:
+        1: support.constant.preprocessor.asl
+
+  preprocessor-content:
+    - match: '(<)([^>]+)(>)'
+      captures:
+        1: punctuation.definition.string.begin.asl
+        2: string.quoted.other.asl
+        3: punctuation.definition.string.end.asl
+    - include: strings
+    - include: comments
+    - include: constants
+    - include: numbers
+    - match: '\b({{builtin_macros}})\b'
+      captures:
+        1: support.constant.preprocessor.asl
+    - include: operators
+
+  preprocessor-line:
+    - meta_scope: meta.preprocessor.asl
+    - include: preprocessor-content
+    - match: '\\$'
+      scope: punctuation.separator.continuation.asl
+      push: preprocessor-continuation
+    - match: $
+      pop: true
+
+  preprocessor-continuation:
+    - meta_scope: meta.preprocessor.asl
+    - match: '^(?=.*[^\\]$)'
+      pop: true
+    - include: preprocessor-content
+    - match: '\\$'
+      scope: punctuation.separator.continuation.asl
+
+  strings:
+    - match: "'"
+      scope: invalid.illegal.character.asl
+    - match: '"'
+      scope: punctuation.definition.string.begin.asl
+      push: string-body
+
+  string-body:
+    - meta_scope: string.quoted.double.asl
+    - meta_include_prototype: false
+    - match: '\\(?:[abfnrtv\\"'']|x[0-9A-Fa-f]{1,2}|[0-7]{1,3})'
+      scope: constant.character.escape.asl
+    - match: '\\[^\s]'
+      scope: invalid.illegal.unknown-escape.asl
+    - match: '"'
+      scope: punctuation.definition.string.end.asl
+      pop: true
+
+  constants:
+    - match: '\b({{constants}})\b'
+      scope: constant.language.asl
+
+  numbers:
+    - match: '\b0[xX][0-9A-Fa-f]+\b'
+      scope: constant.numeric.integer.hexadecimal.asl
+    - match: '\b0[0-7]+\b'
+      scope: constant.numeric.integer.octal.asl
+    - match: '\b[0-9]+\b'
+      scope: constant.numeric.integer.decimal.asl
+
+  declarations:
+    - match: '\b(?i:Method|Function)\b'
+      scope: 'storage.type.function.asl keyword.declaration.function.asl'
+      push: method-name
+    - match: '\b(?i:Device|Processor|PowerResource|ThermalZone|OperationRegion|DataTableRegion)\b'
+      scope: 'storage.type.asl keyword.declaration.type.asl'
+      push: type-name
+    - match: '\b(?i:Scope)\b'
+      scope: 'storage.type.namespace.asl keyword.declaration.namespace.asl'
+      push: namespace-name
+    - match: '\b(?i:Name|Mutex|Event|External)\b'
+      scope: 'storage.type.asl keyword.declaration.type.asl'
+      push: constant-name
+    - match: '\b(?i:DefinitionBlock)\b'
+      scope: 'storage.type.asl keyword.declaration.type.asl'
+    - match: '\b(?i:Alias|BankField|Field|IndexField)\b'
+      scope: 'storage.type.asl keyword.declaration.type.asl'
+
+  method-name:
+    - match: '\s+'
+    - match: '\('
+      scope: punctuation.section.group.begin.asl
+      set: method-name-identifier
+    - match: '(?=\S)'
+      pop: true
+
+  method-name-identifier:
+    - match: '\s+'
+    - match: '{{name_path}}'
+      captures:
+        1: punctuation.definition.namespace.asl
+        2: entity.name.function.asl
+      pop: true
+    - match: '(?=\S)'
+      pop: true
+
+  type-name:
+    - match: '\s+'
+    - match: '\('
+      scope: punctuation.section.group.begin.asl
+      set: type-name-identifier
+    - match: '(?=\S)'
+      pop: true
+
+  type-name-identifier:
+    - match: '\s+'
+    - match: '{{name_path}}'
+      captures:
+        1: punctuation.definition.namespace.asl
+        2: entity.name.type.asl
+      pop: true
+    - match: '(?=\S)'
+      pop: true
+
+  namespace-name:
+    - match: '\s+'
+    - match: '\('
+      scope: punctuation.section.group.begin.asl
+      set: namespace-name-identifier
+    - match: '(?=\S)'
+      pop: true
+
+  namespace-name-identifier:
+    - match: '\s+'
+    - match: '{{name_path}}'
+      captures:
+        1: punctuation.definition.namespace.asl
+        2: entity.name.namespace.asl
+      pop: true
+    - match: '(?=\S)'
+      pop: true
+
+  constant-name:
+    - match: '\s+'
+    - match: '\('
+      scope: punctuation.section.group.begin.asl
+      set: constant-name-identifier
+    - match: '(?=\S)'
+      pop: true
+
+  constant-name-identifier:
+    - match: '\s+'
+    - match: '{{name_path}}'
+      captures:
+        1: punctuation.definition.namespace.asl
+        2: entity.name.constant.asl
+      pop: true
+    - match: '(?=\S)'
+      pop: true
+
+  control:
+    - match: '\b({{control}})\b'
+      scope: keyword.control.asl
+
+  resource-macros:
+    - match: '\b({{resources}})\b'
+      scope: support.function.resource.asl
+
+  builtins:
+    - match: '\b({{builtins}})\b'
+      scope: support.function.builtin.asl
+
+  flags:
+    - match: '\b({{flags}})\b'
+      scope: keyword.other.asl
+
+  variables:
+    - match: '\b({{arg_local}})\b'
+      scope: variable.language.asl
+
+  predefined-names:
+    - match: '(?<![A-Za-z0-9_])(\\|(?:\^+)?)({{predefined}})(?![A-Za-z0-9_])'
+      captures:
+        1: punctuation.definition.namespace.asl
+        2: support.constant.asl
+
+  names:
+    - match: '(?<![A-Za-z0-9_]){{name_path}}(?=\s*\()'
+      captures:
+        1: punctuation.definition.namespace.asl
+        2: variable.function.asl
+    - match: '{{name_path}}'
+      captures:
+        1: punctuation.definition.namespace.asl
+        2: meta.path.asl variable.other.asl
+
+  operators:
+    - match: '(?:<<=|>>=|\+=|-=|\*=|/=|%=|&=|\|=|\^=|=(?!=))'
+      scope: keyword.operator.assignment.asl
+    - match: '(?:==|!=|<=|>=|<(?![<=])|>(?![>=]))'
+      scope: keyword.operator.comparison.asl
+    - match: '(?:&&|\|\||!)'
+      scope: keyword.operator.logical.asl
+    - match: '(?:\+\+|--|[+\-*/%])'
+      scope: keyword.operator.arithmetic.asl
+    - match: '(?:<<|>>|[&|^~])'
+      scope: keyword.operator.bitwise.asl
+
+  punctuation:
+    - match: ','
+      scope: punctuation.separator.comma.asl
+    - match: ';'
+      scope: punctuation.terminator.statement.asl
+    - match: '\{'
+      scope: punctuation.section.block.begin.asl
+    - match: '\}'
+      scope: punctuation.section.block.end.asl
+    - match: '\('
+      scope: punctuation.section.group.begin.asl
+    - match: '\)'
+      scope: punctuation.section.group.end.asl
+    - match: '\['
+      scope: punctuation.section.brackets.begin.asl
+    - match: '\]'
+      scope: punctuation.section.brackets.end.asl
