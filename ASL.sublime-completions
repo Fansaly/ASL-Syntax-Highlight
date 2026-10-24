@@ -1,0 +1,7495 @@
+{
+  "scope": "source.asl",
+  "completions": [
+    {
+      "trigger": "DefinitionBlock",
+      "contents": "DefinitionBlock (\"${1:dsdt.aml}\", \"${2:DSDT}\", ${3:2}, \"${4:ASL}\", \"${5:TABLE}\", ${6:0x00000001})\n{\n\t$0\n}",
+      "annotation": "(AmlFileName, TableSignature, ...)",
+      "kind": [
+        "snippet",
+        "s",
+        "Snippet"
+      ],
+      "details": "Declare an ACPI definition block."
+    },
+    {
+      "trigger": "Method",
+      "contents": "Method (${1:MTHD}, ${2:0}, ${3:NotSerialized})\n{\n\t$0\n}",
+      "annotation": "(MethodName, NumArgs, SerializeRule)",
+      "kind": [
+        "function",
+        "m",
+        "Method"
+      ],
+      "details": "Declare a control method."
+    },
+    {
+      "trigger": "Function",
+      "contents": "Function (${1:FUNC}, ${2:0}, ${3:NotSerialized})\n{\n\t$0\n}",
+      "annotation": "(FunctionName, NumArgs, SerializeRule)",
+      "kind": [
+        "function",
+        "f",
+        "Function"
+      ],
+      "details": "Declare an ASL function."
+    },
+    {
+      "trigger": "Device",
+      "contents": "Device (${1:DEV0})\n{\n\t$0\n}",
+      "annotation": "(DeviceName)",
+      "kind": [
+        "type",
+        "d",
+        "Device"
+      ],
+      "details": "Declare a device object."
+    },
+    {
+      "trigger": "Scope",
+      "contents": "Scope (${1:\\_SB})\n{\n\t$0\n}",
+      "annotation": "(ScopeName)",
+      "kind": [
+        "namespace",
+        "n",
+        "Scope"
+      ],
+      "details": "Open an ACPI namespace scope."
+    },
+    {
+      "trigger": "Processor",
+      "contents": "Processor (${1:CPU0}, ${2:0x00000000}, ${3:0x00000000})\n{\n\t$0\n}",
+      "annotation": "(ProcessorName, ProcessorId, PblkAddress)",
+      "kind": [
+        "type",
+        "p",
+        "Processor"
+      ],
+      "details": "Declare a processor object."
+    },
+    {
+      "trigger": "PowerResource",
+      "contents": "PowerResource (${1:PWR0}, ${2:0}, ${3:0})\n{\n\t$0\n}",
+      "annotation": "(ResourceName, SystemLevel, ResourceOrder)",
+      "kind": [
+        "type",
+        "p",
+        "Power resource"
+      ],
+      "details": "Declare a power resource object."
+    },
+    {
+      "trigger": "ThermalZone",
+      "contents": "ThermalZone (${1:TZ00})\n{\n\t$0\n}",
+      "annotation": "(ThermalZoneName)",
+      "kind": [
+        "type",
+        "t",
+        "Thermal zone"
+      ],
+      "details": "Declare a thermal zone object."
+    },
+    {
+      "trigger": "Name",
+      "contents": "Name (${1:NAME}, ${2:Zero})",
+      "annotation": "(ObjectName, Object)",
+      "kind": [
+        "variable",
+        "n",
+        "Named object"
+      ],
+      "details": "Declare a named object."
+    },
+    {
+      "trigger": "Alias",
+      "contents": "Alias (${1:Source}, ${2:ALIS})",
+      "annotation": "(SourceObject, AliasObject)",
+      "kind": [
+        "variable",
+        "a",
+        "Alias"
+      ],
+      "details": "Declare an alias for a named object."
+    },
+    {
+      "trigger": "External",
+      "contents": "External (${1:NAME}, ${2:DeviceObj}, ${3:0}, ${4:NotSerialized})",
+      "annotation": "(ObjectName, ObjectType, ...)",
+      "kind": [
+        "variable",
+        "e",
+        "External"
+      ],
+      "details": "Declare an object defined in another table."
+    },
+    {
+      "trigger": "Mutex",
+      "contents": "Mutex (${1:MUTX}, ${2:0})",
+      "annotation": "(MutexName, SyncLevel)",
+      "kind": [
+        "variable",
+        "m",
+        "Mutex"
+      ],
+      "details": "Declare a mutex object."
+    },
+    {
+      "trigger": "Event",
+      "contents": "Event (${1:EVT0})",
+      "annotation": "(EventName)",
+      "kind": [
+        "variable",
+        "e",
+        "Event"
+      ],
+      "details": "Declare an event object."
+    },
+    {
+      "trigger": "OperationRegion",
+      "contents": "OperationRegion (${1:REG0}, ${2:SystemMemory}, ${3:0x00000000}, ${4:0x1000})",
+      "annotation": "(RegionName, RegionSpace, Offset, Length)",
+      "kind": [
+        "type",
+        "o",
+        "Operation region"
+      ],
+      "details": "Declare an operation region."
+    },
+    {
+      "trigger": "Field",
+      "contents": "Field (${1:REG0}, ${2:AnyAcc}, ${3:NoLock}, ${4:Preserve})\n{\n\t${5:FLD0}, ${6:8}\n}",
+      "annotation": "(RegionName, AccessType, LockRule, UpdateRule)",
+      "kind": [
+        "type",
+        "f",
+        "Field"
+      ],
+      "details": "Declare field units in an operation region."
+    },
+    {
+      "trigger": "IndexField",
+      "contents": "IndexField (${1:INDEX}, ${2:DATA}, ${3:ByteAcc}, ${4:NoLock}, ${5:Preserve})\n{\n\t${6:FLD0}, ${7:8}\n}",
+      "annotation": "(IndexName, DataName, AccessType, ...)",
+      "kind": [
+        "type",
+        "f",
+        "Index field"
+      ],
+      "details": "Declare field units in an index/data pair."
+    },
+    {
+      "trigger": "BankField",
+      "contents": "BankField (${1:REG0}, ${2:BNK0}, ${3:0}, ${4:ByteAcc}, ${5:NoLock}, ${6:Preserve})\n{\n\t${7:FLD0}, ${8:8}\n}",
+      "annotation": "(RegionName, BankName, BankValue, ...)",
+      "kind": [
+        "type",
+        "f",
+        "Bank field"
+      ],
+      "details": "Declare field units in a banked operation region."
+    },
+    {
+      "trigger": "DataTableRegion",
+      "contents": "DataTableRegion (${1:REG0}, \"${2:SSDT}\", \"${3:OEMID}\", \"${4:TABLEID}\")",
+      "annotation": "(RegionName, Signature, OemId, OemTableId)",
+      "kind": [
+        "type",
+        "d",
+        "Data table region"
+      ],
+      "details": "Declare a data table region."
+    },
+    {
+      "trigger": "If",
+      "contents": "If (${1:Condition})\n{\n\t$0\n}",
+      "annotation": "(Predicate)",
+      "kind": [
+        "keyword",
+        "i",
+        "If"
+      ],
+      "details": "Conditional execution."
+    },
+    {
+      "trigger": "Else",
+      "contents": "Else\n{\n\t$0\n}",
+      "kind": [
+        "keyword",
+        "e",
+        "Else"
+      ],
+      "details": "Alternate conditional execution."
+    },
+    {
+      "trigger": "ElseIf",
+      "contents": "ElseIf (${1:Condition})\n{\n\t$0\n}",
+      "annotation": "(Predicate)",
+      "kind": [
+        "keyword",
+        "e",
+        "ElseIf"
+      ],
+      "details": "Additional conditional execution."
+    },
+    {
+      "trigger": "While",
+      "contents": "While (${1:Condition})\n{\n\t$0\n}",
+      "annotation": "(Predicate)",
+      "kind": [
+        "keyword",
+        "w",
+        "While"
+      ],
+      "details": "Conditional loop."
+    },
+    {
+      "trigger": "Switch",
+      "contents": "Switch (${1:Expression})\n{\n\tCase (${2:Value})\n\t{\n\t\t$0\n\t}\n\tDefault\n\t{\n\t}\n}",
+      "annotation": "(Expression)",
+      "kind": [
+        "keyword",
+        "s",
+        "Switch"
+      ],
+      "details": "Select code to execute based on an expression value."
+    },
+    {
+      "trigger": "ResourceTemplate",
+      "contents": "ResourceTemplate ()\n{\n\t$0\n}",
+      "annotation": "()",
+      "kind": [
+        "function",
+        "r",
+        "Resource template"
+      ],
+      "details": "Declare a resource template buffer."
+    },
+    {
+      "trigger": "IRQ",
+      "contents": "IRQ (${1:Level}, ${2:ActiveLow}, ${3:Shared})\n{\n\t$0\n}",
+      "annotation": "(InterruptType, InterruptLevel, ShareType)",
+      "kind": [
+        "function",
+        "r",
+        "IRQ resource"
+      ],
+      "details": "IRQ resource descriptor macro."
+    },
+    {
+      "trigger": "IRQNoFlags",
+      "contents": "IRQNoFlags ()\n{\n\t$0\n}",
+      "annotation": "()",
+      "kind": [
+        "function",
+        "r",
+        "IRQ resource"
+      ],
+      "details": "IRQ resource descriptor macro without flags."
+    },
+    {
+      "trigger": "DMA",
+      "contents": "DMA (${1:Compatibility}, ${2:BusMaster}, ${3:Transfer8})\n{\n\t$0\n}",
+      "annotation": "(DmaType, BusMaster, XferType, ...)",
+      "kind": [
+        "function",
+        "r",
+        "DMA resource"
+      ],
+      "details": "DMA resource descriptor macro."
+    },
+    {
+      "trigger": "IO",
+      "contents": "IO (${1:Decode16}, ${2:0x0000}, ${3:0xFFFF}, ${4:0x1}, ${5:0x100})",
+      "annotation": "(IoDecode, AddressMin, AddressMax, ...)",
+      "kind": [
+        "function",
+        "r",
+        "IO resource"
+      ],
+      "details": "I/O resource descriptor macro."
+    },
+    {
+      "trigger": "FixedIO",
+      "contents": "FixedIO (${1:0x0000}, ${2:0x10})",
+      "annotation": "(AddressBase, RangeLength)",
+      "kind": [
+        "function",
+        "r",
+        "Fixed IO"
+      ],
+      "details": "Fixed I/O resource descriptor macro."
+    },
+    {
+      "trigger": "Memory24",
+      "contents": "Memory24 (${1:ReadWrite}, ${2:0x00000000}, ${3:0x00100000})",
+      "annotation": "(ReadWrite, AddressBase, RangeLength)",
+      "kind": [
+        "function",
+        "r",
+        "Memory resource"
+      ],
+      "details": "24-bit memory resource descriptor macro."
+    },
+    {
+      "trigger": "Memory32",
+      "contents": "Memory32 (${1:ReadWrite}, ${2:0x00000000}, ${3:0x00100000}, ${4:0x00000000}, ${5:0x00100000})",
+      "annotation": "(ReadWrite, Min, Max, Align, Length)",
+      "kind": [
+        "function",
+        "r",
+        "Memory resource"
+      ],
+      "details": "32-bit memory resource descriptor macro."
+    },
+    {
+      "trigger": "Memory32Fixed",
+      "contents": "Memory32Fixed (${1:ReadWrite}, ${2:0x00000000}, ${3:0x00100000})",
+      "annotation": "(ReadWrite, AddressBase, RangeLength)",
+      "kind": [
+        "function",
+        "r",
+        "Memory resource"
+      ],
+      "details": "Fixed 32-bit memory resource descriptor macro."
+    },
+    {
+      "trigger": "DWordIO",
+      "contents": "DWordIO (${1:ResourceProducer}, ${2:MinFixed}, ${3:MaxFixed}, ${4:PosDecode}, ${5:0}, ${6:0x00000000}, ${7:0x0000FFFF}, ${8:0}, ${9:0x1000})",
+      "annotation": "(ResourceType, MinType, MaxType, Decode, ...)",
+      "kind": [
+        "function",
+        "r",
+        "DWord IO"
+      ],
+      "details": "DWord I/O resource descriptor macro."
+    },
+    {
+      "trigger": "Interrupt",
+      "contents": "Interrupt (${1:ResourceConsumer}, ${2:Level}, ${3:ActiveLow}, ${4:Shared})\n{\n\t${5:0x10}\n}",
+      "annotation": "(ResourceType, InterruptType, InterruptLevel, ...)",
+      "kind": [
+        "function",
+        "r",
+        "Interrupt resource"
+      ],
+      "details": "Interrupt resource descriptor macro."
+    },
+    {
+      "trigger": "GpioInt",
+      "contents": "GpioInt (${1:Level}, ${2:ActiveLow}, ${3:Shared}, ${4:PullDefault}, ${5:0}, \"${6:\\\\_SB.GPIO}\", ${7:0}, ${8:ResourceConsumer})\n{\n\t$0\n}",
+      "annotation": "(InterruptType, InterruptLevel, ShareType, ...)",
+      "kind": [
+        "function",
+        "r",
+        "GPIO interrupt"
+      ],
+      "details": "GPIO interrupt resource descriptor macro."
+    },
+    {
+      "trigger": "GpioIo",
+      "contents": "GpioIo (${1:Shared}, ${2:PullDefault}, ${3:0}, ${4:0}, ${5:IoRestrictionNone}, \"${6:\\\\_SB.GPIO}\", ${7:0}, ${8:ResourceConsumer})\n{\n\t$0\n}",
+      "annotation": "(ShareType, PinConfig, DebounceTimeout, ...)",
+      "kind": [
+        "function",
+        "r",
+        "GPIO IO"
+      ],
+      "details": "GPIO I/O resource descriptor macro."
+    },
+    {
+      "trigger": "I2cSerialBusV2",
+      "contents": "I2cSerialBusV2 (${1:0x50}, ${2:ControllerInitiated}, ${3:400000}, ${4:AddressingMode7Bit}, \"${5:\\\\_SB.I2C0}\", ${6:0x00}, ${7:ResourceConsumer})",
+      "annotation": "(SlaveAddress, SlaveMode, ConnectionSpeed, ...)",
+      "kind": [
+        "function",
+        "r",
+        "I2C resource"
+      ],
+      "details": "I2C serial bus resource descriptor macro."
+    },
+    {
+      "trigger": "SpiSerialBusV2",
+      "contents": "SpiSerialBusV2 (${1:0}, ${2:PolarityLow}, ${3:FourWireMode}, ${4:8}, ${5:ControllerInitiated}, ${6:1000000}, ${7:ClockPolarityLow}, ${8:ClockPhaseFirst}, \"${9:\\\\_SB.SPI0}\", ${10:0}, ${11:ResourceConsumer})",
+      "annotation": "(DeviceSelection, Polarity, WireMode, ...)",
+      "kind": [
+        "function",
+        "r",
+        "SPI resource"
+      ],
+      "details": "SPI serial bus resource descriptor macro."
+    },
+    {
+      "trigger": "UartSerialBusV2",
+      "contents": "UartSerialBusV2 (${1:115200}, ${2:DataBitsEight}, ${3:StopBitsOne}, ${4:0}, ${5:LittleEndian}, ${6:ParityTypeNone}, ${7:FlowControlNone}, ${8:0}, ${9:0}, \"${10:\\\\_SB.UART}\", ${11:0}, ${12:ResourceConsumer})",
+      "annotation": "(Speed, DataBits, StopBits, ...)",
+      "kind": [
+        "function",
+        "r",
+        "UART resource"
+      ],
+      "details": "UART serial bus resource descriptor macro."
+    },
+    {
+      "trigger": "StartDependentFn",
+      "contents": "StartDependentFn (${1:0}, ${2:0})\n{\n\t$0\n}",
+      "annotation": "(Priority, Performance)",
+      "kind": [
+        "function",
+        "r",
+        "Dependent function"
+      ],
+      "details": "Start a dependent function resource block."
+    },
+    {
+      "trigger": "StartDependentFnNoPri",
+      "contents": "StartDependentFnNoPri ()\n{\n\t$0\n}",
+      "annotation": "()",
+      "kind": [
+        "function",
+        "r",
+        "Dependent function"
+      ],
+      "details": "Start a dependent function resource block without priority."
+    },
+    {
+      "trigger": "EndDependentFn",
+      "contents": "EndDependentFn ()",
+      "annotation": "()",
+      "kind": [
+        "function",
+        "r",
+        "Dependent function"
+      ],
+      "details": "End a dependent function resource block."
+    },
+    {
+      "trigger": "VendorShort",
+      "contents": "VendorShort (${1:0x00})",
+      "annotation": "(ByteList)",
+      "kind": [
+        "function",
+        "r",
+        "Vendor resource"
+      ],
+      "details": "Vendor-defined short resource descriptor macro."
+    },
+    {
+      "trigger": "VendorLong",
+      "contents": "VendorLong (${1:0x00})",
+      "annotation": "(ByteList)",
+      "kind": [
+        "function",
+        "r",
+        "Vendor resource"
+      ],
+      "details": "Vendor-defined long resource descriptor macro."
+    },
+    {
+      "trigger": "Register",
+      "contents": "Register (${1:RegionSpace}, ${2:0x00}, ${3:0x00}, ${4:0x01})",
+      "annotation": "(RegionSpace, Offset, AccessSize, ...)",
+      "kind": [
+        "function",
+        "r",
+        "Register resource"
+      ],
+      "details": "Generic register resource descriptor macro."
+    },
+    {
+      "trigger": "ClockInput",
+      "contents": "ClockInput (${1:0x0000}, ${2:1}, ${3:Hz}, ${4:0}, \"${5:\\\\_SB.CLK0}\", ${6:0}, ${7:ResourceConsumer})",
+      "annotation": "(Frequency, FrequencyType, ...)",
+      "kind": [
+        "function",
+        "r",
+        "Clock resource"
+      ],
+      "details": "Clock input resource descriptor macro."
+    },
+    {
+      "trigger": "Csi2Bus",
+      "contents": "Csi2Bus (${1:0}, ${2:0}, \"${3:\\\\_SB.CSI0}\", ${4:0}, ${5:ResourceConsumer})",
+      "annotation": "(SlaveMode, PhyType, ResourceSource, ...)",
+      "kind": [
+        "function",
+        "r",
+        "CSI-2 resource"
+      ],
+      "details": "CSI-2 serial bus resource descriptor macro."
+    },
+    {
+      "trigger": "#include",
+      "contents": "#include \"${1:file.asi}\"",
+      "annotation": "include source file",
+      "kind": [
+        "keyword",
+        "#",
+        "Preprocessor"
+      ],
+      "details": "Include another ASL source file."
+    },
+    {
+      "trigger": "#includebuffer",
+      "contents": "#includebuffer \"${1:data.bin}\" ${2:BUFF}",
+      "annotation": "include binary buffer",
+      "kind": [
+        "keyword",
+        "#",
+        "Preprocessor"
+      ],
+      "details": "Include a binary file as a named buffer."
+    },
+    {
+      "trigger": "#define",
+      "contents": "#define ${1:NAME} ${2:value}",
+      "annotation": "define a macro",
+      "kind": [
+        "keyword",
+        "#",
+        "Preprocessor"
+      ],
+      "details": "Define a preprocessor macro."
+    },
+    {
+      "trigger": "#if",
+      "contents": "#if ${1:condition}\n$0\n#endif",
+      "annotation": "conditional compile",
+      "kind": [
+        "keyword",
+        "#",
+        "Preprocessor"
+      ],
+      "details": "Conditionally compile the following block."
+    },
+    {
+      "trigger": "#ifdef",
+      "contents": "#ifdef ${1:NAME}\n$0\n#endif",
+      "annotation": "conditional compile",
+      "kind": [
+        "keyword",
+        "#",
+        "Preprocessor"
+      ],
+      "details": "Compile the block if the macro is defined."
+    },
+    {
+      "trigger": "#ifndef",
+      "contents": "#ifndef ${1:NAME}\n$0\n#endif",
+      "annotation": "conditional compile",
+      "kind": [
+        "keyword",
+        "#",
+        "Preprocessor"
+      ],
+      "details": "Compile the block if the macro is not defined."
+    },
+    {
+      "trigger": "#pragma disable",
+      "contents": "#pragma disable (${1:1234})",
+      "annotation": "suppress diagnostic",
+      "kind": [
+        "keyword",
+        "#",
+        "Preprocessor"
+      ],
+      "details": "Disable an iASL diagnostic number."
+    },
+    {
+      "trigger": "Add",
+      "contents": "Add (${1:Addend1}, ${2:Addend2}, ${3:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Add</code> ASL operator."
+    },
+    {
+      "trigger": "Acquire",
+      "contents": "Acquire (${1:Mutex}, ${2:Timeout})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Acquire</code> ASL operator."
+    },
+    {
+      "trigger": "And",
+      "contents": "And (${1:Source1}, ${2:Source2}, ${3:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>And</code> ASL operator."
+    },
+    {
+      "trigger": "Concatenate",
+      "contents": "Concatenate (${1:Source1}, ${2:Source2}, ${3:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Concatenate</code> ASL operator."
+    },
+    {
+      "trigger": "CondRefOf",
+      "contents": "CondRefOf (${1:Source}, ${2:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>CondRefOf</code> ASL operator."
+    },
+    {
+      "trigger": "CopyObject",
+      "contents": "CopyObject (${1:Source}, ${2:Destination})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>CopyObject</code> ASL operator."
+    },
+    {
+      "trigger": "DerefOf",
+      "contents": "DerefOf (${1:Object})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>DerefOf</code> ASL operator."
+    },
+    {
+      "trigger": "Divide",
+      "contents": "Divide (${1:Dividend}, ${2:Divisor}, ${3:Remainder}, ${4:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Divide</code> ASL operator."
+    },
+    {
+      "trigger": "EisaId",
+      "contents": "EisaId (\"${1:PNP0A03}\")",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>EisaId</code> ASL operator."
+    },
+    {
+      "trigger": "Fatal",
+      "contents": "Fatal (${1:Type}, ${2:Code}, ${3:Arg})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Fatal</code> ASL operator."
+    },
+    {
+      "trigger": "Index",
+      "contents": "Index (${1:Source}, ${2:Index}, ${3:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Index</code> ASL operator."
+    },
+    {
+      "trigger": "Load",
+      "contents": "Load (${1:NameString}, ${2:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Load</code> ASL operator."
+    },
+    {
+      "trigger": "LoadTable",
+      "contents": "LoadTable (${1:Signature}, ${2:OemId}, ${3:OemTableId}, ...)",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>LoadTable</code> ASL operator."
+    },
+    {
+      "trigger": "Match",
+      "contents": "Match (${1:SearchPackage}, ${2:MatchOp1}, ${3:MatchObject1}, ${4:MatchOp2}, ${5:MatchObject2}, ${6:StartIndex})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Match</code> ASL operator."
+    },
+    {
+      "trigger": "Mid",
+      "contents": "Mid (${1:Source}, ${2:Index}, ${3:Length}, ${4:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Mid</code> ASL operator."
+    },
+    {
+      "trigger": "Multiply",
+      "contents": "Multiply (${1:Multiplicand}, ${2:Multiplier}, ${3:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Multiply</code> ASL operator."
+    },
+    {
+      "trigger": "Not",
+      "contents": "Not (${1:Source}, ${2:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Not</code> ASL operator."
+    },
+    {
+      "trigger": "Notify",
+      "contents": "Notify (${1:Object}, ${2:Value})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Notify</code> ASL operator."
+    },
+    {
+      "trigger": "ObjectType",
+      "contents": "ObjectType (${1:Object})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>ObjectType</code> ASL operator."
+    },
+    {
+      "trigger": "Or",
+      "contents": "Or (${1:Source1}, ${2:Source2}, ${3:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Or</code> ASL operator."
+    },
+    {
+      "trigger": "RefOf",
+      "contents": "RefOf (${1:Object})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>RefOf</code> ASL operator."
+    },
+    {
+      "trigger": "Release",
+      "contents": "Release (${1:Mutex})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Release</code> ASL operator."
+    },
+    {
+      "trigger": "ShiftLeft",
+      "contents": "ShiftLeft (${1:Source}, ${2:BitCount}, ${3:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>ShiftLeft</code> ASL operator."
+    },
+    {
+      "trigger": "ShiftRight",
+      "contents": "ShiftRight (${1:Source}, ${2:BitCount}, ${3:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>ShiftRight</code> ASL operator."
+    },
+    {
+      "trigger": "SizeOf",
+      "contents": "SizeOf (${1:Object})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>SizeOf</code> ASL operator."
+    },
+    {
+      "trigger": "Sleep",
+      "contents": "Sleep (${1:Milliseconds})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Sleep</code> ASL operator."
+    },
+    {
+      "trigger": "Stall",
+      "contents": "Stall (${1:Microseconds})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Stall</code> ASL operator."
+    },
+    {
+      "trigger": "Store",
+      "contents": "Store (${1:Source}, ${2:Destination})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Store</code> ASL operator."
+    },
+    {
+      "trigger": "Subtract",
+      "contents": "Subtract (${1:Minuend}, ${2:Subtrahend}, ${3:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Subtract</code> ASL operator."
+    },
+    {
+      "trigger": "ToBcd",
+      "contents": "ToBcd (${1:Source}, ${2:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>ToBcd</code> ASL operator."
+    },
+    {
+      "trigger": "ToBuffer",
+      "contents": "ToBuffer (${1:Source}, ${2:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>ToBuffer</code> ASL operator."
+    },
+    {
+      "trigger": "ToDecimalString",
+      "contents": "ToDecimalString (${1:Source}, ${2:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>ToDecimalString</code> ASL operator."
+    },
+    {
+      "trigger": "ToHexString",
+      "contents": "ToHexString (${1:Source}, ${2:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>ToHexString</code> ASL operator."
+    },
+    {
+      "trigger": "ToInteger",
+      "contents": "ToInteger (${1:Source}, ${2:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>ToInteger</code> ASL operator."
+    },
+    {
+      "trigger": "ToString",
+      "contents": "ToString (${1:Source}, ${2:Length}, ${3:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>ToString</code> ASL operator."
+    },
+    {
+      "trigger": "ToUuid",
+      "contents": "ToUuid (\"${1:03000200-0400-0500-0006-000700080009}\")",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>ToUuid</code> ASL operator."
+    },
+    {
+      "trigger": "Unicode",
+      "contents": "Unicode (\"${1:string}\")",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Unicode</code> ASL operator."
+    },
+    {
+      "trigger": "Wait",
+      "contents": "Wait (${1:Event}, ${2:Timeout})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>Wait</code> ASL operator."
+    },
+    {
+      "trigger": "XOr",
+      "contents": "XOr (${1:Source1}, ${2:Source2}, ${3:Result})",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "Insert the <code>XOr</code> ASL operator."
+    },
+    {
+      "trigger": "Debug",
+      "contents": "Debug",
+      "annotation": "ASL constant",
+      "kind": [
+        "keyword",
+        "c",
+        "Constant"
+      ],
+      "details": "Built-in ASL constant <code>Debug</code>."
+    },
+    {
+      "trigger": "One",
+      "contents": "One",
+      "annotation": "ASL constant",
+      "kind": [
+        "keyword",
+        "c",
+        "Constant"
+      ],
+      "details": "Built-in ASL constant <code>One</code>."
+    },
+    {
+      "trigger": "Ones",
+      "contents": "Ones",
+      "annotation": "ASL constant",
+      "kind": [
+        "keyword",
+        "c",
+        "Constant"
+      ],
+      "details": "Built-in ASL constant <code>Ones</code>."
+    },
+    {
+      "trigger": "Revision",
+      "contents": "Revision",
+      "annotation": "ASL constant",
+      "kind": [
+        "keyword",
+        "c",
+        "Constant"
+      ],
+      "details": "Built-in ASL constant <code>Revision</code>."
+    },
+    {
+      "trigger": "Zero",
+      "contents": "Zero",
+      "annotation": "ASL constant",
+      "kind": [
+        "keyword",
+        "c",
+        "Constant"
+      ],
+      "details": "Built-in ASL constant <code>Zero</code>."
+    },
+    {
+      "trigger": "Break",
+      "contents": "Break",
+      "annotation": "ASL control keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Control keyword"
+      ],
+      "details": "ASL control keyword <code>Break</code>."
+    },
+    {
+      "trigger": "BreakPoint",
+      "contents": "BreakPoint",
+      "annotation": "ASL control keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Control keyword"
+      ],
+      "details": "ASL control keyword <code>BreakPoint</code>."
+    },
+    {
+      "trigger": "Case",
+      "contents": "Case",
+      "annotation": "ASL control keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Control keyword"
+      ],
+      "details": "ASL control keyword <code>Case</code>."
+    },
+    {
+      "trigger": "Continue",
+      "contents": "Continue",
+      "annotation": "ASL control keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Control keyword"
+      ],
+      "details": "ASL control keyword <code>Continue</code>."
+    },
+    {
+      "trigger": "Default",
+      "contents": "Default",
+      "annotation": "ASL control keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Control keyword"
+      ],
+      "details": "ASL control keyword <code>Default</code>."
+    },
+    {
+      "trigger": "Return",
+      "contents": "Return",
+      "annotation": "ASL control keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Control keyword"
+      ],
+      "details": "ASL control keyword <code>Return</code>."
+    },
+    {
+      "trigger": "AccessAs",
+      "contents": "AccessAs",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>AccessAs</code>."
+    },
+    {
+      "trigger": "Buffer",
+      "contents": "Buffer",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Buffer</code>."
+    },
+    {
+      "trigger": "ConcatenateResTemplate",
+      "contents": "ConcatenateResTemplate",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>ConcatenateResTemplate</code>."
+    },
+    {
+      "trigger": "Connection",
+      "contents": "Connection",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Connection</code>."
+    },
+    {
+      "trigger": "CreateBitField",
+      "contents": "CreateBitField",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>CreateBitField</code>."
+    },
+    {
+      "trigger": "CreateByteField",
+      "contents": "CreateByteField",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>CreateByteField</code>."
+    },
+    {
+      "trigger": "CreateDWordField",
+      "contents": "CreateDWordField",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>CreateDWordField</code>."
+    },
+    {
+      "trigger": "CreateField",
+      "contents": "CreateField",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>CreateField</code>."
+    },
+    {
+      "trigger": "CreateQWordField",
+      "contents": "CreateQWordField",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>CreateQWordField</code>."
+    },
+    {
+      "trigger": "CreateWordField",
+      "contents": "CreateWordField",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>CreateWordField</code>."
+    },
+    {
+      "trigger": "Decrement",
+      "contents": "Decrement",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Decrement</code>."
+    },
+    {
+      "trigger": "FindSetLeftBit",
+      "contents": "FindSetLeftBit",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>FindSetLeftBit</code>."
+    },
+    {
+      "trigger": "FindSetRightBit",
+      "contents": "FindSetRightBit",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>FindSetRightBit</code>."
+    },
+    {
+      "trigger": "fprintf",
+      "contents": "fprintf",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>fprintf</code>."
+    },
+    {
+      "trigger": "FromBcd",
+      "contents": "FromBcd",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>FromBcd</code>."
+    },
+    {
+      "trigger": "Include",
+      "contents": "Include",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Include</code>."
+    },
+    {
+      "trigger": "Increment",
+      "contents": "Increment",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Increment</code>."
+    },
+    {
+      "trigger": "LAnd",
+      "contents": "LAnd",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>LAnd</code>."
+    },
+    {
+      "trigger": "LEqual",
+      "contents": "LEqual",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>LEqual</code>."
+    },
+    {
+      "trigger": "LGreater",
+      "contents": "LGreater",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>LGreater</code>."
+    },
+    {
+      "trigger": "LGreaterEqual",
+      "contents": "LGreaterEqual",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>LGreaterEqual</code>."
+    },
+    {
+      "trigger": "LLess",
+      "contents": "LLess",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>LLess</code>."
+    },
+    {
+      "trigger": "LLessEqual",
+      "contents": "LLessEqual",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>LLessEqual</code>."
+    },
+    {
+      "trigger": "LNot",
+      "contents": "LNot",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>LNot</code>."
+    },
+    {
+      "trigger": "LNotEqual",
+      "contents": "LNotEqual",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>LNotEqual</code>."
+    },
+    {
+      "trigger": "LOr",
+      "contents": "LOr",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>LOr</code>."
+    },
+    {
+      "trigger": "Mod",
+      "contents": "Mod",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Mod</code>."
+    },
+    {
+      "trigger": "NAnd",
+      "contents": "NAnd",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>NAnd</code>."
+    },
+    {
+      "trigger": "Noop",
+      "contents": "Noop",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Noop</code>."
+    },
+    {
+      "trigger": "NOr",
+      "contents": "NOr",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>NOr</code>."
+    },
+    {
+      "trigger": "Offset",
+      "contents": "Offset",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Offset</code>."
+    },
+    {
+      "trigger": "Package",
+      "contents": "Package",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Package</code>."
+    },
+    {
+      "trigger": "printf",
+      "contents": "printf",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>printf</code>."
+    },
+    {
+      "trigger": "Reset",
+      "contents": "Reset",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Reset</code>."
+    },
+    {
+      "trigger": "Signal",
+      "contents": "Signal",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Signal</code>."
+    },
+    {
+      "trigger": "Timer",
+      "contents": "Timer",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Timer</code>."
+    },
+    {
+      "trigger": "ToPLD",
+      "contents": "ToPLD",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>ToPLD</code>."
+    },
+    {
+      "trigger": "Unload",
+      "contents": "Unload",
+      "annotation": "ASL operator",
+      "kind": [
+        "function",
+        "f",
+        "ASL operator"
+      ],
+      "details": "ASL built-in operator <code>Unload</code>."
+    },
+    {
+      "trigger": "DWordMemory",
+      "contents": "DWordMemory",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>DWordMemory</code>."
+    },
+    {
+      "trigger": "DWordPcc",
+      "contents": "DWordPcc",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>DWordPcc</code>."
+    },
+    {
+      "trigger": "DWordSpace",
+      "contents": "DWordSpace",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>DWordSpace</code>."
+    },
+    {
+      "trigger": "ExtendedIO",
+      "contents": "ExtendedIO",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>ExtendedIO</code>."
+    },
+    {
+      "trigger": "ExtendedMemory",
+      "contents": "ExtendedMemory",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>ExtendedMemory</code>."
+    },
+    {
+      "trigger": "ExtendedSpace",
+      "contents": "ExtendedSpace",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>ExtendedSpace</code>."
+    },
+    {
+      "trigger": "FixedDma",
+      "contents": "FixedDma",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>FixedDma</code>."
+    },
+    {
+      "trigger": "I2cSerialBus",
+      "contents": "I2cSerialBus",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>I2cSerialBus</code>."
+    },
+    {
+      "trigger": "PinConfig",
+      "contents": "PinConfig",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>PinConfig</code>."
+    },
+    {
+      "trigger": "PinFunction",
+      "contents": "PinFunction",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>PinFunction</code>."
+    },
+    {
+      "trigger": "PinGroup",
+      "contents": "PinGroup",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>PinGroup</code>."
+    },
+    {
+      "trigger": "PinGroupConfig",
+      "contents": "PinGroupConfig",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>PinGroupConfig</code>."
+    },
+    {
+      "trigger": "PinGroupFunction",
+      "contents": "PinGroupFunction",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>PinGroupFunction</code>."
+    },
+    {
+      "trigger": "QWordIO",
+      "contents": "QWordIO",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>QWordIO</code>."
+    },
+    {
+      "trigger": "QWordMemory",
+      "contents": "QWordMemory",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>QWordMemory</code>."
+    },
+    {
+      "trigger": "QWordPcc",
+      "contents": "QWordPcc",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>QWordPcc</code>."
+    },
+    {
+      "trigger": "QWordSpace",
+      "contents": "QWordSpace",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>QWordSpace</code>."
+    },
+    {
+      "trigger": "RawDataBuffer",
+      "contents": "RawDataBuffer",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>RawDataBuffer</code>."
+    },
+    {
+      "trigger": "SpiSerialBus",
+      "contents": "SpiSerialBus",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>SpiSerialBus</code>."
+    },
+    {
+      "trigger": "UartSerialBus",
+      "contents": "UartSerialBus",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>UartSerialBus</code>."
+    },
+    {
+      "trigger": "WordBusNumber",
+      "contents": "WordBusNumber",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>WordBusNumber</code>."
+    },
+    {
+      "trigger": "WordIO",
+      "contents": "WordIO",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>WordIO</code>."
+    },
+    {
+      "trigger": "WordPcc",
+      "contents": "WordPcc",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>WordPcc</code>."
+    },
+    {
+      "trigger": "WordSpace",
+      "contents": "WordSpace",
+      "annotation": "ACPI resource macro",
+      "kind": [
+        "function",
+        "r",
+        "Resource macro"
+      ],
+      "details": "ACPI resource descriptor macro <code>WordSpace</code>."
+    },
+    {
+      "trigger": "ActiveBoth",
+      "contents": "ActiveBoth",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ActiveBoth</code>."
+    },
+    {
+      "trigger": "ActiveHigh",
+      "contents": "ActiveHigh",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ActiveHigh</code>."
+    },
+    {
+      "trigger": "ActiveLow",
+      "contents": "ActiveLow",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ActiveLow</code>."
+    },
+    {
+      "trigger": "AddressingMode10Bit",
+      "contents": "AddressingMode10Bit",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AddressingMode10Bit</code>."
+    },
+    {
+      "trigger": "AddressingMode7Bit",
+      "contents": "AddressingMode7Bit",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AddressingMode7Bit</code>."
+    },
+    {
+      "trigger": "AddressRangeACPI",
+      "contents": "AddressRangeACPI",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AddressRangeACPI</code>."
+    },
+    {
+      "trigger": "AddressRangeMemory",
+      "contents": "AddressRangeMemory",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AddressRangeMemory</code>."
+    },
+    {
+      "trigger": "AddressRangeNVS",
+      "contents": "AddressRangeNVS",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AddressRangeNVS</code>."
+    },
+    {
+      "trigger": "AddressRangeReserved",
+      "contents": "AddressRangeReserved",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AddressRangeReserved</code>."
+    },
+    {
+      "trigger": "AnyAcc",
+      "contents": "AnyAcc",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AnyAcc</code>."
+    },
+    {
+      "trigger": "AttribBlock",
+      "contents": "AttribBlock",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AttribBlock</code>."
+    },
+    {
+      "trigger": "AttribBlockProcessCall",
+      "contents": "AttribBlockProcessCall",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AttribBlockProcessCall</code>."
+    },
+    {
+      "trigger": "AttribByte",
+      "contents": "AttribByte",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AttribByte</code>."
+    },
+    {
+      "trigger": "AttribBytes",
+      "contents": "AttribBytes",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AttribBytes</code>."
+    },
+    {
+      "trigger": "AttribProcessCall",
+      "contents": "AttribProcessCall",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AttribProcessCall</code>."
+    },
+    {
+      "trigger": "AttribQuick",
+      "contents": "AttribQuick",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AttribQuick</code>."
+    },
+    {
+      "trigger": "AttribRawBytes",
+      "contents": "AttribRawBytes",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AttribRawBytes</code>."
+    },
+    {
+      "trigger": "AttribRawProcessBytes",
+      "contents": "AttribRawProcessBytes",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AttribRawProcessBytes</code>."
+    },
+    {
+      "trigger": "AttribSendReceive",
+      "contents": "AttribSendReceive",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AttribSendReceive</code>."
+    },
+    {
+      "trigger": "AttribWord",
+      "contents": "AttribWord",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>AttribWord</code>."
+    },
+    {
+      "trigger": "BigEndian",
+      "contents": "BigEndian",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>BigEndian</code>."
+    },
+    {
+      "trigger": "BufferAcc",
+      "contents": "BufferAcc",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>BufferAcc</code>."
+    },
+    {
+      "trigger": "BuffFieldObj",
+      "contents": "BuffFieldObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>BuffFieldObj</code>."
+    },
+    {
+      "trigger": "BuffObj",
+      "contents": "BuffObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>BuffObj</code>."
+    },
+    {
+      "trigger": "BusMaster",
+      "contents": "BusMaster",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>BusMaster</code>."
+    },
+    {
+      "trigger": "ByteAcc",
+      "contents": "ByteAcc",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ByteAcc</code>."
+    },
+    {
+      "trigger": "Cacheable",
+      "contents": "Cacheable",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Cacheable</code>."
+    },
+    {
+      "trigger": "ClockPhaseFirst",
+      "contents": "ClockPhaseFirst",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ClockPhaseFirst</code>."
+    },
+    {
+      "trigger": "ClockPhaseSecond",
+      "contents": "ClockPhaseSecond",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ClockPhaseSecond</code>."
+    },
+    {
+      "trigger": "ClockPolarityHigh",
+      "contents": "ClockPolarityHigh",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ClockPolarityHigh</code>."
+    },
+    {
+      "trigger": "ClockPolarityLow",
+      "contents": "ClockPolarityLow",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ClockPolarityLow</code>."
+    },
+    {
+      "trigger": "Compatibility",
+      "contents": "Compatibility",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Compatibility</code>."
+    },
+    {
+      "trigger": "ControllerInitiated",
+      "contents": "ControllerInitiated",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ControllerInitiated</code>."
+    },
+    {
+      "trigger": "DataBitsEight",
+      "contents": "DataBitsEight",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>DataBitsEight</code>."
+    },
+    {
+      "trigger": "DataBitsFive",
+      "contents": "DataBitsFive",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>DataBitsFive</code>."
+    },
+    {
+      "trigger": "DataBitsNine",
+      "contents": "DataBitsNine",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>DataBitsNine</code>."
+    },
+    {
+      "trigger": "DataBitsSeven",
+      "contents": "DataBitsSeven",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>DataBitsSeven</code>."
+    },
+    {
+      "trigger": "DataBitsSix",
+      "contents": "DataBitsSix",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>DataBitsSix</code>."
+    },
+    {
+      "trigger": "DDBHandleObj",
+      "contents": "DDBHandleObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>DDBHandleObj</code>."
+    },
+    {
+      "trigger": "Decode10",
+      "contents": "Decode10",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Decode10</code>."
+    },
+    {
+      "trigger": "Decode16",
+      "contents": "Decode16",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Decode16</code>."
+    },
+    {
+      "trigger": "DenseTranslation",
+      "contents": "DenseTranslation",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>DenseTranslation</code>."
+    },
+    {
+      "trigger": "DeviceInitiated",
+      "contents": "DeviceInitiated",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>DeviceInitiated</code>."
+    },
+    {
+      "trigger": "DeviceObj",
+      "contents": "DeviceObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>DeviceObj</code>."
+    },
+    {
+      "trigger": "DWordAcc",
+      "contents": "DWordAcc",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>DWordAcc</code>."
+    },
+    {
+      "trigger": "Edge",
+      "contents": "Edge",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Edge</code>."
+    },
+    {
+      "trigger": "EmbeddedControl",
+      "contents": "EmbeddedControl",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>EmbeddedControl</code>."
+    },
+    {
+      "trigger": "EntireRange",
+      "contents": "EntireRange",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>EntireRange</code>."
+    },
+    {
+      "trigger": "EventObj",
+      "contents": "EventObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>EventObj</code>."
+    },
+    {
+      "trigger": "Exclusive",
+      "contents": "Exclusive",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Exclusive</code>."
+    },
+    {
+      "trigger": "ExclusiveAndWake",
+      "contents": "ExclusiveAndWake",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ExclusiveAndWake</code>."
+    },
+    {
+      "trigger": "FFixedHW",
+      "contents": "FFixedHW",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>FFixedHW</code>."
+    },
+    {
+      "trigger": "FieldUnitObj",
+      "contents": "FieldUnitObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>FieldUnitObj</code>."
+    },
+    {
+      "trigger": "Fixed",
+      "contents": "Fixed",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Fixed</code>."
+    },
+    {
+      "trigger": "FlowControlHardware",
+      "contents": "FlowControlHardware",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>FlowControlHardware</code>."
+    },
+    {
+      "trigger": "FlowControlNone",
+      "contents": "FlowControlNone",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>FlowControlNone</code>."
+    },
+    {
+      "trigger": "FlowControlXon",
+      "contents": "FlowControlXon",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>FlowControlXon</code>."
+    },
+    {
+      "trigger": "FourWireMode",
+      "contents": "FourWireMode",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>FourWireMode</code>."
+    },
+    {
+      "trigger": "GeneralPurposeIo",
+      "contents": "GeneralPurposeIo",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>GeneralPurposeIo</code>."
+    },
+    {
+      "trigger": "GenericSerialBus",
+      "contents": "GenericSerialBus",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>GenericSerialBus</code>."
+    },
+    {
+      "trigger": "Hz",
+      "contents": "Hz",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Hz</code>."
+    },
+    {
+      "trigger": "IntObj",
+      "contents": "IntObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>IntObj</code>."
+    },
+    {
+      "trigger": "IoRestrictionInputOnly",
+      "contents": "IoRestrictionInputOnly",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>IoRestrictionInputOnly</code>."
+    },
+    {
+      "trigger": "IoRestrictionNone",
+      "contents": "IoRestrictionNone",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>IoRestrictionNone</code>."
+    },
+    {
+      "trigger": "IoRestrictionNoneAndPreserve",
+      "contents": "IoRestrictionNoneAndPreserve",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>IoRestrictionNoneAndPreserve</code>."
+    },
+    {
+      "trigger": "IoRestrictionOutputOnly",
+      "contents": "IoRestrictionOutputOnly",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>IoRestrictionOutputOnly</code>."
+    },
+    {
+      "trigger": "IPMI",
+      "contents": "IPMI",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>IPMI</code>."
+    },
+    {
+      "trigger": "ISAOnlyRanges",
+      "contents": "ISAOnlyRanges",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ISAOnlyRanges</code>."
+    },
+    {
+      "trigger": "KHz",
+      "contents": "KHz",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>KHz</code>."
+    },
+    {
+      "trigger": "Level",
+      "contents": "Level",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Level</code>."
+    },
+    {
+      "trigger": "LittleEndian",
+      "contents": "LittleEndian",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>LittleEndian</code>."
+    },
+    {
+      "trigger": "Lock",
+      "contents": "Lock",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Lock</code>."
+    },
+    {
+      "trigger": "MaxFixed",
+      "contents": "MaxFixed",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MaxFixed</code>."
+    },
+    {
+      "trigger": "MaxNotFixed",
+      "contents": "MaxNotFixed",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MaxNotFixed</code>."
+    },
+    {
+      "trigger": "MEQ",
+      "contents": "MEQ",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MEQ</code>."
+    },
+    {
+      "trigger": "MethodObj",
+      "contents": "MethodObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MethodObj</code>."
+    },
+    {
+      "trigger": "MGE",
+      "contents": "MGE",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MGE</code>."
+    },
+    {
+      "trigger": "MGT",
+      "contents": "MGT",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MGT</code>."
+    },
+    {
+      "trigger": "MHz",
+      "contents": "MHz",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MHz</code>."
+    },
+    {
+      "trigger": "MinFixed",
+      "contents": "MinFixed",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MinFixed</code>."
+    },
+    {
+      "trigger": "MinNotFixed",
+      "contents": "MinNotFixed",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MinNotFixed</code>."
+    },
+    {
+      "trigger": "MLE",
+      "contents": "MLE",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MLE</code>."
+    },
+    {
+      "trigger": "MLT",
+      "contents": "MLT",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MLT</code>."
+    },
+    {
+      "trigger": "MTR",
+      "contents": "MTR",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MTR</code>."
+    },
+    {
+      "trigger": "MutexObj",
+      "contents": "MutexObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>MutexObj</code>."
+    },
+    {
+      "trigger": "NoLock",
+      "contents": "NoLock",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>NoLock</code>."
+    },
+    {
+      "trigger": "NonCacheable",
+      "contents": "NonCacheable",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>NonCacheable</code>."
+    },
+    {
+      "trigger": "NonISAOnlyRanges",
+      "contents": "NonISAOnlyRanges",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>NonISAOnlyRanges</code>."
+    },
+    {
+      "trigger": "NotBusMaster",
+      "contents": "NotBusMaster",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>NotBusMaster</code>."
+    },
+    {
+      "trigger": "NotSerialized",
+      "contents": "NotSerialized",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>NotSerialized</code>."
+    },
+    {
+      "trigger": "OpRegionObj",
+      "contents": "OpRegionObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>OpRegionObj</code>."
+    },
+    {
+      "trigger": "ParityTypeEven",
+      "contents": "ParityTypeEven",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ParityTypeEven</code>."
+    },
+    {
+      "trigger": "ParityTypeMark",
+      "contents": "ParityTypeMark",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ParityTypeMark</code>."
+    },
+    {
+      "trigger": "ParityTypeNone",
+      "contents": "ParityTypeNone",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ParityTypeNone</code>."
+    },
+    {
+      "trigger": "ParityTypeOdd",
+      "contents": "ParityTypeOdd",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ParityTypeOdd</code>."
+    },
+    {
+      "trigger": "ParityTypeSpace",
+      "contents": "ParityTypeSpace",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ParityTypeSpace</code>."
+    },
+    {
+      "trigger": "PCC",
+      "contents": "PCC",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PCC</code>."
+    },
+    {
+      "trigger": "PCI_Config",
+      "contents": "PCI_Config",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PCI_Config</code>."
+    },
+    {
+      "trigger": "PciBarTarget",
+      "contents": "PciBarTarget",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PciBarTarget</code>."
+    },
+    {
+      "trigger": "PkgObj",
+      "contents": "PkgObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PkgObj</code>."
+    },
+    {
+      "trigger": "PlatformRtMechanism",
+      "contents": "PlatformRtMechanism",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PlatformRtMechanism</code>."
+    },
+    {
+      "trigger": "PLD_Bay",
+      "contents": "PLD_Bay",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Bay</code>."
+    },
+    {
+      "trigger": "PLD_Blue",
+      "contents": "PLD_Blue",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Blue</code>."
+    },
+    {
+      "trigger": "PLD_CabinetNumber",
+      "contents": "PLD_CabinetNumber",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_CabinetNumber</code>."
+    },
+    {
+      "trigger": "PLD_CardCageNumber",
+      "contents": "PLD_CardCageNumber",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_CardCageNumber</code>."
+    },
+    {
+      "trigger": "PLD_Dock",
+      "contents": "PLD_Dock",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Dock</code>."
+    },
+    {
+      "trigger": "PLD_Ejectable",
+      "contents": "PLD_Ejectable",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Ejectable</code>."
+    },
+    {
+      "trigger": "PLD_EjectRequired",
+      "contents": "PLD_EjectRequired",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_EjectRequired</code>."
+    },
+    {
+      "trigger": "PLD_Green",
+      "contents": "PLD_Green",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Green</code>."
+    },
+    {
+      "trigger": "PLD_GroupOrientation",
+      "contents": "PLD_GroupOrientation",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_GroupOrientation</code>."
+    },
+    {
+      "trigger": "PLD_GroupPosition",
+      "contents": "PLD_GroupPosition",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_GroupPosition</code>."
+    },
+    {
+      "trigger": "PLD_GroupToken",
+      "contents": "PLD_GroupToken",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_GroupToken</code>."
+    },
+    {
+      "trigger": "PLD_Height",
+      "contents": "PLD_Height",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Height</code>."
+    },
+    {
+      "trigger": "PLD_HorizontalOffset",
+      "contents": "PLD_HorizontalOffset",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_HorizontalOffset</code>."
+    },
+    {
+      "trigger": "PLD_HorizontalPosition",
+      "contents": "PLD_HorizontalPosition",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_HorizontalPosition</code>."
+    },
+    {
+      "trigger": "PLD_IgnoreColor",
+      "contents": "PLD_IgnoreColor",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_IgnoreColor</code>."
+    },
+    {
+      "trigger": "PLD_Lid",
+      "contents": "PLD_Lid",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Lid</code>."
+    },
+    {
+      "trigger": "PLD_Order",
+      "contents": "PLD_Order",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Order</code>."
+    },
+    {
+      "trigger": "PLD_Panel",
+      "contents": "PLD_Panel",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Panel</code>."
+    },
+    {
+      "trigger": "PLD_Red",
+      "contents": "PLD_Red",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Red</code>."
+    },
+    {
+      "trigger": "PLD_Reference",
+      "contents": "PLD_Reference",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Reference</code>."
+    },
+    {
+      "trigger": "PLD_Reserved",
+      "contents": "PLD_Reserved",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Reserved</code>."
+    },
+    {
+      "trigger": "PLD_Revision",
+      "contents": "PLD_Revision",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Revision</code>."
+    },
+    {
+      "trigger": "PLD_Rotation",
+      "contents": "PLD_Rotation",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Rotation</code>."
+    },
+    {
+      "trigger": "PLD_Shape",
+      "contents": "PLD_Shape",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Shape</code>."
+    },
+    {
+      "trigger": "PLD_UserVisible",
+      "contents": "PLD_UserVisible",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_UserVisible</code>."
+    },
+    {
+      "trigger": "PLD_VerticalOffset",
+      "contents": "PLD_VerticalOffset",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_VerticalOffset</code>."
+    },
+    {
+      "trigger": "PLD_VerticalPosition",
+      "contents": "PLD_VerticalPosition",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_VerticalPosition</code>."
+    },
+    {
+      "trigger": "PLD_Width",
+      "contents": "PLD_Width",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PLD_Width</code>."
+    },
+    {
+      "trigger": "PolarityHigh",
+      "contents": "PolarityHigh",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PolarityHigh</code>."
+    },
+    {
+      "trigger": "PolarityLow",
+      "contents": "PolarityLow",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PolarityLow</code>."
+    },
+    {
+      "trigger": "PosDecode",
+      "contents": "PosDecode",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PosDecode</code>."
+    },
+    {
+      "trigger": "PowerResObj",
+      "contents": "PowerResObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PowerResObj</code>."
+    },
+    {
+      "trigger": "Prefetchable",
+      "contents": "Prefetchable",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Prefetchable</code>."
+    },
+    {
+      "trigger": "Preserve",
+      "contents": "Preserve",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Preserve</code>."
+    },
+    {
+      "trigger": "ProcessorObj",
+      "contents": "ProcessorObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ProcessorObj</code>."
+    },
+    {
+      "trigger": "PullDefault",
+      "contents": "PullDefault",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PullDefault</code>."
+    },
+    {
+      "trigger": "PullDown",
+      "contents": "PullDown",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PullDown</code>."
+    },
+    {
+      "trigger": "PullNone",
+      "contents": "PullNone",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PullNone</code>."
+    },
+    {
+      "trigger": "PullUp",
+      "contents": "PullUp",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>PullUp</code>."
+    },
+    {
+      "trigger": "QWordAcc",
+      "contents": "QWordAcc",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>QWordAcc</code>."
+    },
+    {
+      "trigger": "ReadOnly",
+      "contents": "ReadOnly",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ReadOnly</code>."
+    },
+    {
+      "trigger": "ReadWrite",
+      "contents": "ReadWrite",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ReadWrite</code>."
+    },
+    {
+      "trigger": "ResourceConsumer",
+      "contents": "ResourceConsumer",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ResourceConsumer</code>."
+    },
+    {
+      "trigger": "ResourceProducer",
+      "contents": "ResourceProducer",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ResourceProducer</code>."
+    },
+    {
+      "trigger": "Serialized",
+      "contents": "Serialized",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Serialized</code>."
+    },
+    {
+      "trigger": "Shared",
+      "contents": "Shared",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Shared</code>."
+    },
+    {
+      "trigger": "SharedAndWake",
+      "contents": "SharedAndWake",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SharedAndWake</code>."
+    },
+    {
+      "trigger": "SMBBlock",
+      "contents": "SMBBlock",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SMBBlock</code>."
+    },
+    {
+      "trigger": "SMBBlockProcessCall",
+      "contents": "SMBBlockProcessCall",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SMBBlockProcessCall</code>."
+    },
+    {
+      "trigger": "SMBByte",
+      "contents": "SMBByte",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SMBByte</code>."
+    },
+    {
+      "trigger": "SMBProcessCall",
+      "contents": "SMBProcessCall",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SMBProcessCall</code>."
+    },
+    {
+      "trigger": "SMBQuick",
+      "contents": "SMBQuick",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SMBQuick</code>."
+    },
+    {
+      "trigger": "SMBSendReceive",
+      "contents": "SMBSendReceive",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SMBSendReceive</code>."
+    },
+    {
+      "trigger": "SMBus",
+      "contents": "SMBus",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SMBus</code>."
+    },
+    {
+      "trigger": "SMBWord",
+      "contents": "SMBWord",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SMBWord</code>."
+    },
+    {
+      "trigger": "SparseTranslation",
+      "contents": "SparseTranslation",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SparseTranslation</code>."
+    },
+    {
+      "trigger": "StopBitsOne",
+      "contents": "StopBitsOne",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>StopBitsOne</code>."
+    },
+    {
+      "trigger": "StopBitsOnePlusHalf",
+      "contents": "StopBitsOnePlusHalf",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>StopBitsOnePlusHalf</code>."
+    },
+    {
+      "trigger": "StopBitsTwo",
+      "contents": "StopBitsTwo",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>StopBitsTwo</code>."
+    },
+    {
+      "trigger": "StopBitsZero",
+      "contents": "StopBitsZero",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>StopBitsZero</code>."
+    },
+    {
+      "trigger": "StrObj",
+      "contents": "StrObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>StrObj</code>."
+    },
+    {
+      "trigger": "SubDecode",
+      "contents": "SubDecode",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SubDecode</code>."
+    },
+    {
+      "trigger": "SystemCMOS",
+      "contents": "SystemCMOS",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SystemCMOS</code>."
+    },
+    {
+      "trigger": "SystemIO",
+      "contents": "SystemIO",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SystemIO</code>."
+    },
+    {
+      "trigger": "SystemMemory",
+      "contents": "SystemMemory",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>SystemMemory</code>."
+    },
+    {
+      "trigger": "ThermalZoneObj",
+      "contents": "ThermalZoneObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ThermalZoneObj</code>."
+    },
+    {
+      "trigger": "ThreeWireMode",
+      "contents": "ThreeWireMode",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>ThreeWireMode</code>."
+    },
+    {
+      "trigger": "Transfer16",
+      "contents": "Transfer16",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Transfer16</code>."
+    },
+    {
+      "trigger": "Transfer8",
+      "contents": "Transfer8",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Transfer8</code>."
+    },
+    {
+      "trigger": "Transfer8_16",
+      "contents": "Transfer8_16",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Transfer8_16</code>."
+    },
+    {
+      "trigger": "TypeA",
+      "contents": "TypeA",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>TypeA</code>."
+    },
+    {
+      "trigger": "TypeB",
+      "contents": "TypeB",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>TypeB</code>."
+    },
+    {
+      "trigger": "TypeF",
+      "contents": "TypeF",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>TypeF</code>."
+    },
+    {
+      "trigger": "TypeStatic",
+      "contents": "TypeStatic",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>TypeStatic</code>."
+    },
+    {
+      "trigger": "TypeTranslation",
+      "contents": "TypeTranslation",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>TypeTranslation</code>."
+    },
+    {
+      "trigger": "UnknownObj",
+      "contents": "UnknownObj",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>UnknownObj</code>."
+    },
+    {
+      "trigger": "Variable",
+      "contents": "Variable",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Variable</code>."
+    },
+    {
+      "trigger": "Width128bit",
+      "contents": "Width128bit",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Width128bit</code>."
+    },
+    {
+      "trigger": "Width16bit",
+      "contents": "Width16bit",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Width16bit</code>."
+    },
+    {
+      "trigger": "Width256bit",
+      "contents": "Width256bit",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Width256bit</code>."
+    },
+    {
+      "trigger": "Width32bit",
+      "contents": "Width32bit",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Width32bit</code>."
+    },
+    {
+      "trigger": "Width64bit",
+      "contents": "Width64bit",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Width64bit</code>."
+    },
+    {
+      "trigger": "Width8bit",
+      "contents": "Width8bit",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>Width8bit</code>."
+    },
+    {
+      "trigger": "WordAcc",
+      "contents": "WordAcc",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>WordAcc</code>."
+    },
+    {
+      "trigger": "WriteAsOnes",
+      "contents": "WriteAsOnes",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>WriteAsOnes</code>."
+    },
+    {
+      "trigger": "WriteAsZeros",
+      "contents": "WriteAsZeros",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>WriteAsZeros</code>."
+    },
+    {
+      "trigger": "WriteCombining",
+      "contents": "WriteCombining",
+      "annotation": "ASL keyword",
+      "kind": [
+        "keyword",
+        "k",
+        "Keyword"
+      ],
+      "details": "ASL keyword or resource flag <code>WriteCombining</code>."
+    },
+    {
+      "trigger": "Arg0",
+      "contents": "Arg0",
+      "annotation": "Method argument",
+      "kind": [
+        "variable",
+        "v",
+        "Argument"
+      ],
+      "details": "Method argument <code>Arg0</code>."
+    },
+    {
+      "trigger": "Arg1",
+      "contents": "Arg1",
+      "annotation": "Method argument",
+      "kind": [
+        "variable",
+        "v",
+        "Argument"
+      ],
+      "details": "Method argument <code>Arg1</code>."
+    },
+    {
+      "trigger": "Arg2",
+      "contents": "Arg2",
+      "annotation": "Method argument",
+      "kind": [
+        "variable",
+        "v",
+        "Argument"
+      ],
+      "details": "Method argument <code>Arg2</code>."
+    },
+    {
+      "trigger": "Arg3",
+      "contents": "Arg3",
+      "annotation": "Method argument",
+      "kind": [
+        "variable",
+        "v",
+        "Argument"
+      ],
+      "details": "Method argument <code>Arg3</code>."
+    },
+    {
+      "trigger": "Arg4",
+      "contents": "Arg4",
+      "annotation": "Method argument",
+      "kind": [
+        "variable",
+        "v",
+        "Argument"
+      ],
+      "details": "Method argument <code>Arg4</code>."
+    },
+    {
+      "trigger": "Arg5",
+      "contents": "Arg5",
+      "annotation": "Method argument",
+      "kind": [
+        "variable",
+        "v",
+        "Argument"
+      ],
+      "details": "Method argument <code>Arg5</code>."
+    },
+    {
+      "trigger": "Arg6",
+      "contents": "Arg6",
+      "annotation": "Method argument",
+      "kind": [
+        "variable",
+        "v",
+        "Argument"
+      ],
+      "details": "Method argument <code>Arg6</code>."
+    },
+    {
+      "trigger": "Local0",
+      "contents": "Local0",
+      "annotation": "Local variable",
+      "kind": [
+        "variable",
+        "v",
+        "Local"
+      ],
+      "details": "Method local variable <code>Local0</code>."
+    },
+    {
+      "trigger": "Local1",
+      "contents": "Local1",
+      "annotation": "Local variable",
+      "kind": [
+        "variable",
+        "v",
+        "Local"
+      ],
+      "details": "Method local variable <code>Local1</code>."
+    },
+    {
+      "trigger": "Local2",
+      "contents": "Local2",
+      "annotation": "Local variable",
+      "kind": [
+        "variable",
+        "v",
+        "Local"
+      ],
+      "details": "Method local variable <code>Local2</code>."
+    },
+    {
+      "trigger": "Local3",
+      "contents": "Local3",
+      "annotation": "Local variable",
+      "kind": [
+        "variable",
+        "v",
+        "Local"
+      ],
+      "details": "Method local variable <code>Local3</code>."
+    },
+    {
+      "trigger": "Local4",
+      "contents": "Local4",
+      "annotation": "Local variable",
+      "kind": [
+        "variable",
+        "v",
+        "Local"
+      ],
+      "details": "Method local variable <code>Local4</code>."
+    },
+    {
+      "trigger": "Local5",
+      "contents": "Local5",
+      "annotation": "Local variable",
+      "kind": [
+        "variable",
+        "v",
+        "Local"
+      ],
+      "details": "Method local variable <code>Local5</code>."
+    },
+    {
+      "trigger": "Local6",
+      "contents": "Local6",
+      "annotation": "Local variable",
+      "kind": [
+        "variable",
+        "v",
+        "Local"
+      ],
+      "details": "Method local variable <code>Local6</code>."
+    },
+    {
+      "trigger": "Local7",
+      "contents": "Local7",
+      "annotation": "Local variable",
+      "kind": [
+        "variable",
+        "v",
+        "Local"
+      ],
+      "details": "Method local variable <code>Local7</code>."
+    },
+    {
+      "trigger": "_ADR",
+      "contents": "_ADR",
+      "annotation": "Address",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns address of a device on parent bus, and resource field"
+    },
+    {
+      "trigger": "_AEI",
+      "contents": "_AEI",
+      "annotation": "ACPI Event Interrupts",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of GPIO events to be used as ACPI events"
+    },
+    {
+      "trigger": "_ALC",
+      "contents": "_ALC",
+      "annotation": "Ambient Light Chromaticity",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the ambient light color chromaticity"
+    },
+    {
+      "trigger": "_ALI",
+      "contents": "_ALI",
+      "annotation": "Ambient Light Illuminance",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the ambient light brightness"
+    },
+    {
+      "trigger": "_ALN",
+      "contents": "_ALN",
+      "annotation": "Alignment",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Base alignment, Resource Descriptor field"
+    },
+    {
+      "trigger": "_ALP",
+      "contents": "_ALP",
+      "annotation": "Ambient Light Polling",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the ambient light sensor polling frequency"
+    },
+    {
+      "trigger": "_ALR",
+      "contents": "_ALR",
+      "annotation": "Ambient Light Response",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the ambient light brightness to display brightness mappings"
+    },
+    {
+      "trigger": "_ALT",
+      "contents": "_ALT",
+      "annotation": "Ambient Light Temperature",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the ambient light color temperature"
+    },
+    {
+      "trigger": "_ART",
+      "contents": "_ART",
+      "annotation": "Active Cooling Relationship Table",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns thermal relationship information between platform devices and fan devices"
+    },
+    {
+      "trigger": "_ASI",
+      "contents": "_ASI",
+      "annotation": "Address Space Id",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_ASZ",
+      "contents": "_ASZ",
+      "annotation": "Access Size",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_ATT",
+      "contents": "_ATT",
+      "annotation": "Type-Specific Attribute",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_BAS",
+      "contents": "_BAS",
+      "annotation": "Base Address",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Range base address, Resource Descriptor field"
+    },
+    {
+      "trigger": "_BBN",
+      "contents": "_BBN",
+      "annotation": "BIOS Bus Number",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the PCI bus number returned by the BIOS"
+    },
+    {
+      "trigger": "_BCL",
+      "contents": "_BCL",
+      "annotation": "Brightness Control Levels",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of supported brightness control levels"
+    },
+    {
+      "trigger": "_BCM",
+      "contents": "_BCM",
+      "annotation": "Brightness Control Method",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets the brightness level of the display device"
+    },
+    {
+      "trigger": "_BCT",
+      "contents": "_BCT",
+      "annotation": "Battery Charge Time",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns time remaining to complete charging battery"
+    },
+    {
+      "trigger": "_BDN",
+      "contents": "_BDN",
+      "annotation": "BIOS Dock Name",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the Dock ID returned by the BIOS"
+    },
+    {
+      "trigger": "_BFS",
+      "contents": "_BFS",
+      "annotation": "Back From Sleep",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Inform AML of a wake event"
+    },
+    {
+      "trigger": "_BIF",
+      "contents": "_BIF",
+      "annotation": "Battery Information",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a Control Method Battery information block"
+    },
+    {
+      "trigger": "_BIX",
+      "contents": "_BIX",
+      "annotation": "Battery Information Extended",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a Control Method Battery extended information block"
+    },
+    {
+      "trigger": "_BLT",
+      "contents": "_BLT",
+      "annotation": "Battery Level Threshold",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Set battery level threshold preferences"
+    },
+    {
+      "trigger": "_BM",
+      "contents": "_BM",
+      "annotation": "Bus Master",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_BM_",
+      "contents": "_BM_",
+      "annotation": "Bus Master",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_BMA",
+      "contents": "_BMA",
+      "annotation": "Battery Measurement Averaging Interval",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets battery measurement averaging interval"
+    },
+    {
+      "trigger": "_BMC",
+      "contents": "_BMC",
+      "annotation": "Battery Maintenance Control",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets battery maintenance and control features"
+    },
+    {
+      "trigger": "_BMD",
+      "contents": "_BMD",
+      "annotation": "Battery Maintenance Data",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns battery maintenance, control, and state data"
+    },
+    {
+      "trigger": "_BMS",
+      "contents": "_BMS",
+      "annotation": "Battery Measurement Sampling Time",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets the battery measurement sampling time"
+    },
+    {
+      "trigger": "_BPC",
+      "contents": "_BPC",
+      "annotation": "Battery Power Characteristics",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns static values used to configure power threshold support in the platform firmware"
+    },
+    {
+      "trigger": "_BPS",
+      "contents": "_BPS",
+      "annotation": "Battery Power State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the power delivery capabilities of the battery at the present time"
+    },
+    {
+      "trigger": "_BPT",
+      "contents": "_BPT",
+      "annotation": "Battery Power Threshold",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Set a relative battery peak power capability change threshold"
+    },
+    {
+      "trigger": "_BQC",
+      "contents": "_BQC",
+      "annotation": "Brightness Query Current",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the current display brightness level"
+    },
+    {
+      "trigger": "_BST",
+      "contents": "_BST",
+      "annotation": "Battery Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a Control Method Battery status block"
+    },
+    {
+      "trigger": "_BTH",
+      "contents": "_BTH",
+      "annotation": "Battery Throttle Limit",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Thermal limit for charging and discharging"
+    },
+    {
+      "trigger": "_BTM",
+      "contents": "_BTM",
+      "annotation": "Battery Time",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the battery runtime"
+    },
+    {
+      "trigger": "_BTP",
+      "contents": "_BTP",
+      "annotation": "Battery Trip Point",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets a Control Method Battery trip point"
+    },
+    {
+      "trigger": "_CBA",
+      "contents": "_CBA",
+      "annotation": "Configuration Base Address",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets the base address for a PCI Express host bridge"
+    },
+    {
+      "trigger": "_CBR",
+      "contents": "_CBR",
+      "annotation": "CXL Host Bridge Register Info",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Get the memory location of CXL Host Bridge Registers"
+    },
+    {
+      "trigger": "_CCA",
+      "contents": "_CCA",
+      "annotation": "Cache Coherency Attribute",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a device's support level for cache coherency"
+    },
+    {
+      "trigger": "_CDM",
+      "contents": "_CDM",
+      "annotation": "Clock Domain",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a logical processor's clock domain identifier"
+    },
+    {
+      "trigger": "_CID",
+      "contents": "_CID",
+      "annotation": "Compatible ID",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a device's Plug and Play Compatible ID list"
+    },
+    {
+      "trigger": "_CLS",
+      "contents": "_CLS",
+      "annotation": "Class Code",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns PCI class code and subclass"
+    },
+    {
+      "trigger": "_CPC",
+      "contents": "_CPC",
+      "annotation": "Continuous Performance Control",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of performance control interfaces"
+    },
+    {
+      "trigger": "_CR3",
+      "contents": "_CR3",
+      "annotation": "Warm/Standby Temperature",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Temperature for a fast low power state"
+    },
+    {
+      "trigger": "_CRS",
+      "contents": "_CRS",
+      "annotation": "Current Resource Settings",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the current resource settings for a device"
+    },
+    {
+      "trigger": "_CRT",
+      "contents": "_CRT",
+      "annotation": "Critical Temperature",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the shutdown critical temperature"
+    },
+    {
+      "trigger": "_CSD",
+      "contents": "_CSD",
+      "annotation": "C-State Dependencies",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of C-state dependencies"
+    },
+    {
+      "trigger": "_CST",
+      "contents": "_CST",
+      "annotation": "C-States",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of supported C-states"
+    },
+    {
+      "trigger": "_CWS",
+      "contents": "_CWS",
+      "annotation": "Clear Wake Alarm Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Clear the status of wake alarms"
+    },
+    {
+      "trigger": "_DBT",
+      "contents": "_DBT",
+      "annotation": "Debounce Timeout",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Timeout value, Resource Descriptor field"
+    },
+    {
+      "trigger": "_DCK",
+      "contents": "_DCK",
+      "annotation": "Dock Present",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets docking isolation. Presence indicates device is a docking station"
+    },
+    {
+      "trigger": "_DCS",
+      "contents": "_DCS",
+      "annotation": "Display Current Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns status of the display output device"
+    },
+    {
+      "trigger": "_DDC",
+      "contents": "_DDC",
+      "annotation": "Display Data Current",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the EDID for the display output device"
+    },
+    {
+      "trigger": "_DDN",
+      "contents": "_DDN",
+      "annotation": "DOS Device Name",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a device logical name"
+    },
+    {
+      "trigger": "_DEC",
+      "contents": "_DEC",
+      "annotation": "Decode",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Device decoding type, Resource Descriptor field"
+    },
+    {
+      "trigger": "_DEP",
+      "contents": "_DEP",
+      "annotation": "Dependencies",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of operation region dependencies"
+    },
+    {
+      "trigger": "_DGS",
+      "contents": "_DGS",
+      "annotation": "Display Graphics State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Return the current state of the output device"
+    },
+    {
+      "trigger": "_DIS",
+      "contents": "_DIS",
+      "annotation": "Disable Device",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Disables a device"
+    },
+    {
+      "trigger": "_DLM",
+      "contents": "_DLM",
+      "annotation": "Device Lock Mutex",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Defines mutex for OS/AML sharing"
+    },
+    {
+      "trigger": "_DMA",
+      "contents": "_DMA",
+      "annotation": "Direct Memory Access",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns device current resources for DMA transactions, and resource field"
+    },
+    {
+      "trigger": "_DOD",
+      "contents": "_DOD",
+      "annotation": "Display Output Devices",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Enumerate all devices attached to the display adapter"
+    },
+    {
+      "trigger": "_DOS",
+      "contents": "_DOS",
+      "annotation": "Disable Output Switching",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets the display output switching mode"
+    },
+    {
+      "trigger": "_DSC",
+      "contents": "_DSC",
+      "annotation": "Deepest State for Configuration",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the deepest D-state of the device to the OSPM"
+    },
+    {
+      "trigger": "_DPL",
+      "contents": "_DPL",
+      "annotation": "Device Selection Polarity",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Polarity of Device Selection signal, Resource Descriptor field"
+    },
+    {
+      "trigger": "_DRS",
+      "contents": "_DRS",
+      "annotation": "Drive Strength",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Drive Strength setting for GPIO connection, Resource Descriptor field"
+    },
+    {
+      "trigger": "_DSD",
+      "contents": "_DSD",
+      "annotation": "Device-Specific Data",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of device property information"
+    },
+    {
+      "trigger": "_DSM",
+      "contents": "_DSM",
+      "annotation": "Device-Specific Method",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Executes device-specific functions"
+    },
+    {
+      "trigger": "_DSS",
+      "contents": "_DSS",
+      "annotation": "Device Set State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets the display device state"
+    },
+    {
+      "trigger": "_DSW",
+      "contents": "_DSW",
+      "annotation": "Device Sleep Wake",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets the sleep and wake transition states for a device"
+    },
+    {
+      "trigger": "_DTI",
+      "contents": "_DTI",
+      "annotation": "Device Temperature Indication",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Conveys native device temperature to the platform"
+    },
+    {
+      "trigger": "_EC",
+      "contents": "_EC",
+      "annotation": "Embedded Controller",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "returns EC offset and query information"
+    },
+    {
+      "trigger": "_EC_",
+      "contents": "_EC_",
+      "annotation": "Embedded Controller",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "returns EC offset and query information"
+    },
+    {
+      "trigger": "_EDL",
+      "contents": "_EDL",
+      "annotation": "Eject Device List",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of devices that are dependent on a device (docking)"
+    },
+    {
+      "trigger": "_EJD",
+      "contents": "_EJD",
+      "annotation": "Ejection Dependent Device",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the name of dependent (parent) device (docking)"
+    },
+    {
+      "trigger": "_END",
+      "contents": "_END",
+      "annotation": "Endianness",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Endian orientation, Resource Descriptor field"
+    },
+    {
+      "trigger": "_EVT",
+      "contents": "_EVT",
+      "annotation": "Event",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Event method for GPIO events"
+    },
+    {
+      "trigger": "_FDE",
+      "contents": "_FDE",
+      "annotation": "Floppy Disk Enumerate",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns floppy disk configuration information"
+    },
+    {
+      "trigger": "_FDI",
+      "contents": "_FDI",
+      "annotation": "Floppy Drive Information",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a floppy drive information block"
+    },
+    {
+      "trigger": "_FDM",
+      "contents": "_FDM",
+      "annotation": "Floppy Drive Mode",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets a floppy drive speed"
+    },
+    {
+      "trigger": "_FIF",
+      "contents": "_FIF",
+      "annotation": "Fan Information",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns fan device information"
+    },
+    {
+      "trigger": "_FIT",
+      "contents": "_FIT",
+      "annotation": "Firmware Interface Table",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of NFIT structures"
+    },
+    {
+      "trigger": "_FIX",
+      "contents": "_FIX",
+      "annotation": "Fixed Register Resource Provider",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of devices that implement FADT register blocks"
+    },
+    {
+      "trigger": "_FLC",
+      "contents": "_FLC",
+      "annotation": "Flow Control",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Flow control, Resource Descriptor field"
+    },
+    {
+      "trigger": "_FPS",
+      "contents": "_FPS",
+      "annotation": "Fan Performance States",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of supported fan performance states"
+    },
+    {
+      "trigger": "_FSL",
+      "contents": "_FSL",
+      "annotation": "Fan Set Level",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Control method that sets the fan device's speed level (performance state)"
+    },
+    {
+      "trigger": "_FST",
+      "contents": "_FST",
+      "annotation": "Fan Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns current status information for a fan device"
+    },
+    {
+      "trigger": "_FUN",
+      "contents": "_FUN",
+      "annotation": "Function Number",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource descriptor field"
+    },
+    {
+      "trigger": "_GAI",
+      "contents": "_GAI",
+      "annotation": "Get Averaging Interval",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the power meter averaging interval"
+    },
+    {
+      "trigger": "_GCP",
+      "contents": "_GCP",
+      "annotation": "Get Capabilities",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Get device time capabilities"
+    },
+    {
+      "trigger": "_GHL",
+      "contents": "_GHL",
+      "annotation": "Get Hardware Limit",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the hardware limit enforced by the power meter"
+    },
+    {
+      "trigger": "_GL",
+      "contents": "_GL",
+      "annotation": "Global Lock",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "OS-defined Global Lock mutex object"
+    },
+    {
+      "trigger": "_GL_",
+      "contents": "_GL_",
+      "annotation": "Global Lock",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "OS-defined Global Lock mutex object"
+    },
+    {
+      "trigger": "_GLK",
+      "contents": "_GLK",
+      "annotation": "Get Global Lock Requirement",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a device's Global Lock requirement for device access"
+    },
+    {
+      "trigger": "_GPD",
+      "contents": "_GPD",
+      "annotation": "Get Post Data",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the value of the VGA device that will be posted at boot"
+    },
+    {
+      "trigger": "_GPE",
+      "contents": "_GPE",
+      "annotation": "General Purpose Events",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Predefined scope (\\\\_GPE) or SCI number for EC"
+    },
+    {
+      "trigger": "_GRA",
+      "contents": "_GRA",
+      "annotation": "Granularity",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Address space granularity, Resource Descriptor field"
+    },
+    {
+      "trigger": "_GRT",
+      "contents": "_GRT",
+      "annotation": "Get Real Time",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns current time-of-day from a time/alarm device"
+    },
+    {
+      "trigger": "_GSB",
+      "contents": "_GSB",
+      "annotation": "Global System Interrupt Base",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the GSB for a I/O APIC device"
+    },
+    {
+      "trigger": "_GTF",
+      "contents": "_GTF",
+      "annotation": "Get Task File",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of ATA commands to restore a drive to default state"
+    },
+    {
+      "trigger": "_GTM",
+      "contents": "_GTM",
+      "annotation": "Get Timing Mode",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of IDE controller timing information"
+    },
+    {
+      "trigger": "_GTS",
+      "contents": "_GTS",
+      "annotation": "Going To Sleep",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Inform AML of pending sleep"
+    },
+    {
+      "trigger": "_GWS",
+      "contents": "_GWS",
+      "annotation": "Get Wake Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Return status of wake alarms"
+    },
+    {
+      "trigger": "_HE",
+      "contents": "_HE",
+      "annotation": "High-Edge",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Interrupt triggering, Resource Descriptor field"
+    },
+    {
+      "trigger": "_HE_",
+      "contents": "_HE_",
+      "annotation": "High-Edge",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Interrupt triggering, Resource Descriptor field"
+    },
+    {
+      "trigger": "_HID",
+      "contents": "_HID",
+      "annotation": "Hardware ID",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a device's Plug and Play Hardware ID"
+    },
+    {
+      "trigger": "_HMA",
+      "contents": "_HMA",
+      "annotation": "Heterogeneous Memory Attributes",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of HMAT structures."
+    },
+    {
+      "trigger": "_HOT",
+      "contents": "_HOT",
+      "annotation": "Hot Temperature",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the critical temperature for sleep (entry to S4)"
+    },
+    {
+      "trigger": "_HPP",
+      "contents": "_HPP",
+      "annotation": "Hot Plug Parameters",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of hot-plug information for a PCI device"
+    },
+    {
+      "trigger": "_HPX",
+      "contents": "_HPX",
+      "annotation": "Hot Plug Parameter Extensions",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of hot-plug information for a PCI device. Supersedes _HPP"
+    },
+    {
+      "trigger": "_VDM",
+      "contents": "_VDM",
+      "annotation": "Voltage Domain",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "A DWORD identifier specifying the voltage domain to which the processor belongs."
+    },
+    {
+      "trigger": "_HRV",
+      "contents": "_HRV",
+      "annotation": "Hardware Revision",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a hardware revision value"
+    },
+    {
+      "trigger": "_IFT",
+      "contents": "_IFT",
+      "annotation": "IPMI Interface Type",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "See the Intelligent Platform Management Interface Specification"
+    },
+    {
+      "trigger": "_INI",
+      "contents": "_INI",
+      "annotation": "Initialize",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Performs device specific initialization"
+    },
+    {
+      "trigger": "_INT",
+      "contents": "_INT",
+      "annotation": "Interrupts",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Interrupt mask bits, Resource Descriptor field"
+    },
+    {
+      "trigger": "_IOR",
+      "contents": "_IOR",
+      "annotation": "I/O Restriction",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Restriction type, Resource Descriptor field"
+    },
+    {
+      "trigger": "_IRC",
+      "contents": "_IRC",
+      "annotation": "Inrush Current",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Presence indicates that a device has a significant inrush current draw"
+    },
+    {
+      "trigger": "_LCK",
+      "contents": "_LCK",
+      "annotation": "Lock Device",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Locks or unlocks a device (docking)"
+    },
+    {
+      "trigger": "_LEN",
+      "contents": "_LEN",
+      "annotation": "Length",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Range length, Resource Descriptor field"
+    },
+    {
+      "trigger": "_LID",
+      "contents": "_LID",
+      "annotation": "Lid Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the open/closed status of the lid on a mobile system"
+    },
+    {
+      "trigger": "_LIN",
+      "contents": "_LIN",
+      "annotation": "Lines In Use",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Handshake lines, Resource Descriptor field"
+    },
+    {
+      "trigger": "_LL",
+      "contents": "_LL",
+      "annotation": "Low Level",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Interrupt polarity, Resource Descriptor field"
+    },
+    {
+      "trigger": "_LL_",
+      "contents": "_LL_",
+      "annotation": "Low Level",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Interrupt polarity, Resource Descriptor field"
+    },
+    {
+      "trigger": "_LPD",
+      "contents": "_LPD",
+      "annotation": "Low Power Dependencies",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of dependencies for low power idle entry"
+    },
+    {
+      "trigger": "_LPI",
+      "contents": "_LPI",
+      "annotation": "Low Power Idle States",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of supported low power idle states"
+    },
+    {
+      "trigger": "_LSI",
+      "contents": "_LSI",
+      "annotation": "Label Storage Information",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns information about the Label Storage Area associated with the NVDIMM object."
+    },
+    {
+      "trigger": "_LSR",
+      "contents": "_LSR",
+      "annotation": "Label Storage Read",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns label data from the Label Storage Area of the NVDIMM object."
+    },
+    {
+      "trigger": "_LSW",
+      "contents": "_LSW",
+      "annotation": "Label Storage Write",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Writes label data in to the Label Storage Area of the NVDIMM object."
+    },
+    {
+      "trigger": "_MAF",
+      "contents": "_MAF",
+      "annotation": "Maximum Address Fixed",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_MAT",
+      "contents": "_MAT",
+      "annotation": "Multiple APIC Table Entry",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of MADT APIC structure entries"
+    },
+    {
+      "trigger": "_MAX",
+      "contents": "_MAX",
+      "annotation": "Maximum Base Address",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_MBM",
+      "contents": "_MBM",
+      "annotation": "Memory Bandwidth Monitoring Data",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns bandwidth monitoring data for a memory device"
+    },
+    {
+      "trigger": "_MEM",
+      "contents": "_MEM",
+      "annotation": "Memory Attributes",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_MIF",
+      "contents": "_MIF",
+      "annotation": "Minimum Address Fixed",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_MIN",
+      "contents": "_MIN",
+      "annotation": "Minimum Base Address",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_MLS",
+      "contents": "_MLS",
+      "annotation": "Multiple Language String",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a device description in multiple languages"
+    },
+    {
+      "trigger": "_MOD",
+      "contents": "_MOD",
+      "annotation": "Mode",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Interrupt mode, Resource Descriptor field"
+    },
+    {
+      "trigger": "_MSG",
+      "contents": "_MSG",
+      "annotation": "Message",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets the system message waiting status indicator"
+    },
+    {
+      "trigger": "_MSM",
+      "contents": "_MSM",
+      "annotation": "Memory Set Monitoring",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets bandwidth monitoring parameters for a memory device"
+    },
+    {
+      "trigger": "_MTL",
+      "contents": "_MTL",
+      "annotation": "Minimum Throttle Limit",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the minimum throttle limit for a thermal zone"
+    },
+    {
+      "trigger": "_MTP",
+      "contents": "_MTP",
+      "annotation": "Memory Type",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_NBS",
+      "contents": "_NBS",
+      "annotation": "NVDIMM Boot Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns information about NVDIMM device’s status at boot time"
+    },
+    {
+      "trigger": "_NCH",
+      "contents": "_NCH",
+      "annotation": "NVDIMM Current Health Information",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns current health information of the NVDIMM device"
+    },
+    {
+      "trigger": "_NIC",
+      "contents": "_NIC",
+      "annotation": "NVDIMM Health Error Injection Capabilities",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns health error injection capabilities that are supported by the platform"
+    },
+    {
+      "trigger": "_NIG",
+      "contents": "_NIG",
+      "annotation": "NVDIMM Inject Health Error Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns currently active health errors and their error attributes that are injected by _NIH"
+    },
+    {
+      "trigger": "_NIH",
+      "contents": "_NIH",
+      "annotation": "NVDIMM Inject/Clear Health Errors",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the status of injecting or clearing Health Errors"
+    },
+    {
+      "trigger": "_NTT",
+      "contents": "_NTT",
+      "annotation": "Notification Temperature Threshold",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a threshold for device temperature change that requires platform notification"
+    },
+    {
+      "trigger": "_OFF",
+      "contents": "_OFF",
+      "annotation": "Power Off",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets a power resource to the off state"
+    },
+    {
+      "trigger": "_ON",
+      "contents": "_ON",
+      "annotation": "Power On",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets a power resource to the on state"
+    },
+    {
+      "trigger": "_ON_",
+      "contents": "_ON_",
+      "annotation": "Power On",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets a power resource to the on state"
+    },
+    {
+      "trigger": "_OS",
+      "contents": "_OS",
+      "annotation": "Operating System",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a string that identifies the operating system"
+    },
+    {
+      "trigger": "_OS_",
+      "contents": "_OS_",
+      "annotation": "Operating System",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a string that identifies the operating system"
+    },
+    {
+      "trigger": "_OSC",
+      "contents": "_OSC",
+      "annotation": "Operating System Capabilities",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Inform AML of host features and capabilities"
+    },
+    {
+      "trigger": "_OSI",
+      "contents": "_OSI",
+      "annotation": "Operating System Interfaces",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns supported interfaces, behaviors, and features"
+    },
+    {
+      "trigger": "_OST",
+      "contents": "_OST",
+      "annotation": "OSPM Status Indication",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Inform AML of event processing status"
+    },
+    {
+      "trigger": "_PAI",
+      "contents": "_PAI",
+      "annotation": "Power Averaging Interval",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets the averaging interval for a power meter"
+    },
+    {
+      "trigger": "_PAR",
+      "contents": "_PAR",
+      "annotation": "Parity",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Parity bits, Resource Descriptor field"
+    },
+    {
+      "trigger": "_PCL",
+      "contents": "_PCL",
+      "annotation": "Power Consumer List",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of devices powered by a power source"
+    },
+    {
+      "trigger": "_PCT",
+      "contents": "_PCT",
+      "annotation": "Performance Control",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns processor performance control and status registers"
+    },
+    {
+      "trigger": "_PDC",
+      "contents": "_PDC",
+      "annotation": "Processor Driver Capabilities",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Inform AML of processor driver capabilities"
+    },
+    {
+      "trigger": "_PDL",
+      "contents": "_PDL",
+      "annotation": "P-state Depth Limit",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the lowest available performance P-state"
+    },
+    {
+      "trigger": "_PHA",
+      "contents": "_PHA",
+      "annotation": "Clock Phase",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Clock phase, Resource Descriptor field"
+    },
+    {
+      "trigger": "_PIC",
+      "contents": "_PIC",
+      "annotation": "Interrupt Model",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Inform AML of the interrupt model in use"
+    },
+    {
+      "trigger": "_PIF",
+      "contents": "_PIF",
+      "annotation": "Power Source Information",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a Power Source information block"
+    },
+    {
+      "trigger": "_PIN",
+      "contents": "_PIN",
+      "annotation": "Pin List",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Pin list, Resource Descriptor field"
+    },
+    {
+      "trigger": "_PLD",
+      "contents": "_PLD",
+      "annotation": "Physical Location of Device",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a device's physical location information"
+    },
+    {
+      "trigger": "_PMC",
+      "contents": "_PMC",
+      "annotation": "Power Meter Capabilities",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of Power Meter capabilities info"
+    },
+    {
+      "trigger": "_PMD",
+      "contents": "_PMD",
+      "annotation": "Power Metered Devices",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of devices that are measured by the power meter device"
+    },
+    {
+      "trigger": "_PMM",
+      "contents": "_PMM",
+      "annotation": "Power Meter Measurement",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the current value of the Power Meter"
+    },
+    {
+      "trigger": "_POL",
+      "contents": "_POL",
+      "annotation": "Polarity",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Interrupt polarity, Resource Descriptor field"
+    },
+    {
+      "trigger": "_PPC",
+      "contents": "_PPC",
+      "annotation": "Performance Present Capabilities",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of the performance states currently supported by the platform"
+    },
+    {
+      "trigger": "_PPE",
+      "contents": "_PPE",
+      "annotation": "Polling for Platform Error",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the polling interval to retrieve Corrected Platform Error information"
+    },
+    {
+      "trigger": "_PPI",
+      "contents": "_PPI",
+      "annotation": "Pin Configuration",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_PR",
+      "contents": "_PR",
+      "annotation": "Processor",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Predefined scope for processor objects"
+    },
+    {
+      "trigger": "_PR0",
+      "contents": "_PR0",
+      "annotation": "Power Resources for D0",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of dependent power resources to enter state D0 (fully on)"
+    },
+    {
+      "trigger": "_PR1",
+      "contents": "_PR1",
+      "annotation": "Power Resources for D1",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of dependent power resources to enter state D1"
+    },
+    {
+      "trigger": "_PR2",
+      "contents": "_PR2",
+      "annotation": "Power Resources for D2",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of dependent power resources to enter state D2"
+    },
+    {
+      "trigger": "_PR3",
+      "contents": "_PR3",
+      "annotation": "Power Resources for D3hot",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of dependent power resources to enter state D3hot"
+    },
+    {
+      "trigger": "_PRE",
+      "contents": "_PRE",
+      "annotation": "Power Resources for Enumeration",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of dependent power resources to enumerate devices on a bus"
+    },
+    {
+      "trigger": "_PRL",
+      "contents": "_PRL",
+      "annotation": "Power Source Redundancy List",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of power source devices in the same redundancy grouping"
+    },
+    {
+      "trigger": "_PRR",
+      "contents": "_PRR",
+      "annotation": "Power Resource for Reset",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Execute a reset on a device"
+    },
+    {
+      "trigger": "_PRS",
+      "contents": "_PRS",
+      "annotation": "Possible Resource Settings",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of a device's possible resource settings"
+    },
+    {
+      "trigger": "_PRT",
+      "contents": "_PRT",
+      "annotation": "PCI Routing Table",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of PCI interrupt mappings"
+    },
+    {
+      "trigger": "_PRW",
+      "contents": "_PRW",
+      "annotation": "Power Resources for Wake",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of dependent power resources for waking"
+    },
+    {
+      "trigger": "_PS0",
+      "contents": "_PS0",
+      "annotation": "Power State 0",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets a device's power state to D0 (device fully on)"
+    },
+    {
+      "trigger": "_PS1",
+      "contents": "_PS1",
+      "annotation": "Power State 1",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets a device's power state to D1"
+    },
+    {
+      "trigger": "_PS2",
+      "contents": "_PS2",
+      "annotation": "Power State 2",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets a device's power state to D2"
+    },
+    {
+      "trigger": "_PS3",
+      "contents": "_PS3",
+      "annotation": "Power State 3",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets a device's power state to D3 (device off)"
+    },
+    {
+      "trigger": "_PSC",
+      "contents": "_PSC",
+      "annotation": "Power State Current",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a device's current power state"
+    },
+    {
+      "trigger": "_PSD",
+      "contents": "_PSD",
+      "annotation": "Power State Dependencies",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns processor P-State dependencies"
+    },
+    {
+      "trigger": "_PSE",
+      "contents": "_PSE",
+      "annotation": "Power State for Enumeration",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Put a bus into enumeration power mode"
+    },
+    {
+      "trigger": "_PSL",
+      "contents": "_PSL",
+      "annotation": "Passive List",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of passive cooling device objects"
+    },
+    {
+      "trigger": "_PSR",
+      "contents": "_PSR",
+      "annotation": "Power Source",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the power source device currently in use"
+    },
+    {
+      "trigger": "_PSS",
+      "contents": "_PSS",
+      "annotation": "Performance Supported States",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of supported processor performance states"
+    },
+    {
+      "trigger": "_PSV",
+      "contents": "_PSV",
+      "annotation": "Passive Temperature",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the passive trip point temperature"
+    },
+    {
+      "trigger": "_PSW",
+      "contents": "_PSW",
+      "annotation": "Power State Wake",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets a device's wake function"
+    },
+    {
+      "trigger": "_PTC",
+      "contents": "_PTC",
+      "annotation": "Processor Throttling Control",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns throttling control and status registers"
+    },
+    {
+      "trigger": "_PTP",
+      "contents": "_PTP",
+      "annotation": "Power Trip Points",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets trip points for the Power Meter device"
+    },
+    {
+      "trigger": "_PTS",
+      "contents": "_PTS",
+      "annotation": "Prepare To Sleep",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Inform the platform of an impending sleep transition"
+    },
+    {
+      "trigger": "_PUR",
+      "contents": "_PUR",
+      "annotation": "Processor Utilization Request",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the number of processors that the platform would like to idle"
+    },
+    {
+      "trigger": "_PXM",
+      "contents": "_PXM",
+      "annotation": "Device Proximity",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a device's proximity domain identifier"
+    },
+    {
+      "trigger": "_RBO",
+      "contents": "_RBO",
+      "annotation": "Register Bit Offset",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_RBW",
+      "contents": "_RBW",
+      "annotation": "Register Bit Width",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_RDI",
+      "contents": "_RDI",
+      "annotation": "Resource Dependencies for Idle",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of dependencies for idle states"
+    },
+    {
+      "trigger": "_REG",
+      "contents": "_REG",
+      "annotation": "Region Availability",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Inform AML code of an operation region availability change"
+    },
+    {
+      "trigger": "_REV",
+      "contents": "_REV",
+      "annotation": "Supported Integer Width",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the supported integer width (&lt;= 1: 32 bits only, &gt;=2: both 32 and 64 bits"
+    },
+    {
+      "trigger": "_RMV",
+      "contents": "_RMV",
+      "annotation": "Removal Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a device's removal ability status (docking)"
+    },
+    {
+      "trigger": "_RNG",
+      "contents": "_RNG",
+      "annotation": "Range",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Memory range type, Resource Descriptor field"
+    },
+    {
+      "trigger": "_RST",
+      "contents": "_RST",
+      "annotation": "Device Reset",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Executes a reset on a device"
+    },
+    {
+      "trigger": "_ROM",
+      "contents": "_ROM",
+      "annotation": "Read-Only Memory",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a copy of the ROM data for a display device"
+    },
+    {
+      "trigger": "_RT",
+      "contents": "_RT",
+      "annotation": "Resource Type",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_RT_",
+      "contents": "_RT_",
+      "annotation": "Resource Type",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_RTV",
+      "contents": "_RTV",
+      "annotation": "Relative Temperature Values",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns temperature value information"
+    },
+    {
+      "trigger": "_RW",
+      "contents": "_RW",
+      "annotation": "Read-Write Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_RW_",
+      "contents": "_RW_",
+      "annotation": "Read-Write Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_RXL",
+      "contents": "_RXL",
+      "annotation": "Receive Buffer Size",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Serial channel buffer, Resource Descriptor field"
+    },
+    {
+      "trigger": "_S0",
+      "contents": "_S0",
+      "annotation": "S0 System State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns values to enter the system into the S0 state"
+    },
+    {
+      "trigger": "_S0_",
+      "contents": "_S0_",
+      "annotation": "S0 System State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns values to enter the system into the S0 state"
+    },
+    {
+      "trigger": "_S1",
+      "contents": "_S1",
+      "annotation": "S1 System State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns values to enter the system into the S1 state"
+    },
+    {
+      "trigger": "_S1_",
+      "contents": "_S1_",
+      "annotation": "S1 System State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns values to enter the system into the S1 state"
+    },
+    {
+      "trigger": "_S2",
+      "contents": "_S2",
+      "annotation": "S2 System State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns values to enter the system into the S2 state"
+    },
+    {
+      "trigger": "_S2_",
+      "contents": "_S2_",
+      "annotation": "S2 System State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns values to enter the system into the S2 state"
+    },
+    {
+      "trigger": "_S3",
+      "contents": "_S3",
+      "annotation": "S3 System State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns values to enter the system into the S3 state"
+    },
+    {
+      "trigger": "_S3_",
+      "contents": "_S3_",
+      "annotation": "S3 System State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns values to enter the system into the S3 state"
+    },
+    {
+      "trigger": "_S4",
+      "contents": "_S4",
+      "annotation": "S4 System State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns values to enter the system into the S4 state"
+    },
+    {
+      "trigger": "_S4_",
+      "contents": "_S4_",
+      "annotation": "S4 System State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns values to enter the system into the S4 state"
+    },
+    {
+      "trigger": "_S5",
+      "contents": "_S5",
+      "annotation": "S5 System State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns values to enter the system into the S5 state"
+    },
+    {
+      "trigger": "_S5_",
+      "contents": "_S5_",
+      "annotation": "S5 System State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns values to enter the system into the S5 state"
+    },
+    {
+      "trigger": "_S1D",
+      "contents": "_S1D",
+      "annotation": "S1 Device State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the highest D-state supported by a device when in the S1 state"
+    },
+    {
+      "trigger": "_S2D",
+      "contents": "_S2D",
+      "annotation": "S2 Device State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the highest D-state supported by a device when in the S2 state"
+    },
+    {
+      "trigger": "_S3D",
+      "contents": "_S3D",
+      "annotation": "S3 Device State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the highest D-state supported by a device when in the S3 state"
+    },
+    {
+      "trigger": "_S4D",
+      "contents": "_S4D",
+      "annotation": "S4 Device State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the highest D-state supported by a device when in the S4 state"
+    },
+    {
+      "trigger": "_S0W",
+      "contents": "_S0W",
+      "annotation": "S0 Device Wake State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the lowest D-state that the device can wake itself from S0"
+    },
+    {
+      "trigger": "_S1W",
+      "contents": "_S1W",
+      "annotation": "S1 Device Wake State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the lowest D-state for this device that can wake the system from S1"
+    },
+    {
+      "trigger": "_S2W",
+      "contents": "_S2W",
+      "annotation": "S2 Device Wake State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the lowest D-state for this device that can wake the system from S2"
+    },
+    {
+      "trigger": "_S3W",
+      "contents": "_S3W",
+      "annotation": "S3 Device Wake State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the lowest D-state for this device that can wake the system from S3"
+    },
+    {
+      "trigger": "_S4W",
+      "contents": "_S4W",
+      "annotation": "S4 Device Wake State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the lowest D-state for this device that can wake the system from S4"
+    },
+    {
+      "trigger": "_SB",
+      "contents": "_SB",
+      "annotation": "System Bus",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Predefined scope for device and bus objects"
+    },
+    {
+      "trigger": "_SB_",
+      "contents": "_SB_",
+      "annotation": "System Bus",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Predefined scope for device and bus objects"
+    },
+    {
+      "trigger": "_SBA",
+      "contents": "_SBA",
+      "annotation": "SM Bus Alert information",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns info on an SMBus alert"
+    },
+    {
+      "trigger": "_SBI",
+      "contents": "_SBI",
+      "annotation": "SM Bus General information",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns info on an SMBus segment"
+    },
+    {
+      "trigger": "_SBR",
+      "contents": "_SBR",
+      "annotation": "SM Bus Data read",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Reads Byte, Word, or Block data from an SMBus segment"
+    },
+    {
+      "trigger": "_SBT",
+      "contents": "_SBT",
+      "annotation": "SM Bus Data transfer",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Performs data transfer to/from an SMBus segment. Implements ProcessCall protocol"
+    },
+    {
+      "trigger": "_SBW",
+      "contents": "_SBW",
+      "annotation": "SM Bus Data write",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Writes Byte, Word, or Block data to an SMBus segment"
+    },
+    {
+      "trigger": "_SBS",
+      "contents": "_SBS",
+      "annotation": "Smart Battery Subsystem",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the subsystem configuration"
+    },
+    {
+      "trigger": "_SCP",
+      "contents": "_SCP",
+      "annotation": "Set Cooling Policy",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets the cooling policy (active or passive)"
+    },
+    {
+      "trigger": "_SDD",
+      "contents": "_SDD",
+      "annotation": "Set Device Data",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets data for a SATA device"
+    },
+    {
+      "trigger": "_SEG",
+      "contents": "_SEG",
+      "annotation": "PCI Segment",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a device's PCI Segment Group number"
+    },
+    {
+      "trigger": "_SHL",
+      "contents": "_SHL",
+      "annotation": "Set Hardware Limit",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets the hardware limit enforced by the Power Meter"
+    },
+    {
+      "trigger": "_SHR",
+      "contents": "_SHR",
+      "annotation": "Shareable",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Interrupt share status, Resource Descriptor field"
+    },
+    {
+      "trigger": "_SI",
+      "contents": "_SI",
+      "annotation": "System Indicators",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Predefined scope"
+    },
+    {
+      "trigger": "_SI_",
+      "contents": "_SI_",
+      "annotation": "System Indicators",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Predefined scope"
+    },
+    {
+      "trigger": "_SIZ",
+      "contents": "_SIZ",
+      "annotation": "Size",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "DMA transfer size, Resource Descriptor field"
+    },
+    {
+      "trigger": "_SLI",
+      "contents": "_SLI",
+      "annotation": "System Locality Information",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of NUMA system localities"
+    },
+    {
+      "trigger": "_SLV",
+      "contents": "_SLV",
+      "annotation": "Slave Mode",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Mode setting, Resource Descriptor field"
+    },
+    {
+      "trigger": "_SPD",
+      "contents": "_SPD",
+      "annotation": "Set Post Device",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets which video device will be posted at boot"
+    },
+    {
+      "trigger": "_SPE",
+      "contents": "_SPE",
+      "annotation": "Speed",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Connection speed, Resource Descriptor field"
+    },
+    {
+      "trigger": "_SRS",
+      "contents": "_SRS",
+      "annotation": "Set Resource Settings",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets a device's resource allocation"
+    },
+    {
+      "trigger": "_SRT",
+      "contents": "_SRT",
+      "annotation": "Set Real Time",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets the current time for a time/alarm device"
+    },
+    {
+      "trigger": "_SRV",
+      "contents": "_SRV",
+      "annotation": "IPMI Spec Revision",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "See the Intelligent Platform Management Interface Specification"
+    },
+    {
+      "trigger": "_SST",
+      "contents": "_SST",
+      "annotation": "System Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets the system status indicator"
+    },
+    {
+      "trigger": "_STA",
+      "contents": "_STA",
+      "annotation": "Status",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the current status of a Device or Power Resource"
+    },
+    {
+      "trigger": "_STB",
+      "contents": "_STB",
+      "annotation": "Stop Bits",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Serial channel stop bits, Resource Descriptor field"
+    },
+    {
+      "trigger": "_STM",
+      "contents": "_STM",
+      "annotation": "Set Timing Mode",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets an IDE controller transfer timings"
+    },
+    {
+      "trigger": "_STP",
+      "contents": "_STP",
+      "annotation": "Set Expired Timer Wake Policy",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sets expired timer policies of the wake alarm device"
+    },
+    {
+      "trigger": "_STR",
+      "contents": "_STR",
+      "annotation": "Description String",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a device's description string"
+    },
+    {
+      "trigger": "_STV",
+      "contents": "_STV",
+      "annotation": "Set Timer Value",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Set timer values of the wake alarm device"
+    },
+    {
+      "trigger": "_SUB",
+      "contents": "_SUB",
+      "annotation": "Subsystem ID",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the subsystem ID for a device"
+    },
+    {
+      "trigger": "_SUN",
+      "contents": "_SUN",
+      "annotation": "Slot User Number",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the slot unique ID number"
+    },
+    {
+      "trigger": "_SWS",
+      "contents": "_SWS",
+      "annotation": "System Wake Source",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the source event that caused the system to wake"
+    },
+    {
+      "trigger": "_TC1",
+      "contents": "_TC1",
+      "annotation": "Thermal Constant 1",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns TC1 for the passive cooling formula"
+    },
+    {
+      "trigger": "_TC2",
+      "contents": "_TC2",
+      "annotation": "Thermal Constant 2",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns TC2 for the passive cooling formula"
+    },
+    {
+      "trigger": "_TDL",
+      "contents": "_TDL",
+      "annotation": "T-State Depth Limit",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the _TSS entry number of the lowest power throttling state"
+    },
+    {
+      "trigger": "_TFP",
+      "contents": "_TFP",
+      "annotation": "Thermal Fast Sampling Period",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the sampling period for passive cooling"
+    },
+    {
+      "trigger": "_TIP",
+      "contents": "_TIP",
+      "annotation": "Expired Timer Wake Policy",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns timer policies of the wake alarm device"
+    },
+    {
+      "trigger": "_TIV",
+      "contents": "_TIV",
+      "annotation": "Timer Values",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns remaining time of the wake alarm device"
+    },
+    {
+      "trigger": "_TMP",
+      "contents": "_TMP",
+      "annotation": "Temperature",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a thermal zone's current temperature"
+    },
+    {
+      "trigger": "_TPC",
+      "contents": "_TPC",
+      "annotation": "Throttling Present Capabilities",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the current number of supported throttling states"
+    },
+    {
+      "trigger": "_TPT",
+      "contents": "_TPT",
+      "annotation": "Trip Point Temperature",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Inform AML that a device's embedded temperature sensor has crossed a temperature trip point"
+    },
+    {
+      "trigger": "_TRA",
+      "contents": "_TRA",
+      "annotation": "Translation",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Address translation offset, Resource Descriptor field"
+    },
+    {
+      "trigger": "_TRS",
+      "contents": "_TRS",
+      "annotation": "Translation Sparse",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Sparse/dense flag, Resource Descriptor field"
+    },
+    {
+      "trigger": "_TRT",
+      "contents": "_TRT",
+      "annotation": "Thermal Relationship Table",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns thermal relationships between platform devices"
+    },
+    {
+      "trigger": "_TSD",
+      "contents": "_TSD",
+      "annotation": "Throttling State Dependencies",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of T-state dependencies"
+    },
+    {
+      "trigger": "_TSF",
+      "contents": "_TSF",
+      "annotation": "Type-Specific Flags",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_TSN",
+      "contents": "_TSN",
+      "annotation": "Thermal Sensor Device",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a reference to a thermal sensor"
+    },
+    {
+      "trigger": "_TSP",
+      "contents": "_TSP",
+      "annotation": "Thermal Sampling Period",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the thermal sampling period for passive cooling"
+    },
+    {
+      "trigger": "_TSS",
+      "contents": "_TSS",
+      "annotation": "Throttling Supported States",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns supported throttling state information"
+    },
+    {
+      "trigger": "_TST",
+      "contents": "_TST",
+      "annotation": "Temperature Sensor Threshold",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the minimum separation for a device's temperature trip points"
+    },
+    {
+      "trigger": "_TTP",
+      "contents": "_TTP",
+      "annotation": "Translation Type",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Translation/static flag, Resource Descriptor field"
+    },
+    {
+      "trigger": "_TTS",
+      "contents": "_TTS",
+      "annotation": "Transition To State",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Inform AML of an S-state transition"
+    },
+    {
+      "trigger": "_TXL",
+      "contents": "_TXL",
+      "annotation": "Transmit Buffer Size",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Serial Channel buffer, Resource Descriptor field"
+    },
+    {
+      "trigger": "_TYP",
+      "contents": "_TYP",
+      "annotation": "Type",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "DMA channel type (speed), Resource Descriptor field"
+    },
+    {
+      "trigger": "_TZ",
+      "contents": "_TZ",
+      "annotation": "Thermal Zone",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Predefined scope: ACPI 1.0"
+    },
+    {
+      "trigger": "_TZ_",
+      "contents": "_TZ_",
+      "annotation": "Thermal Zone",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Predefined scope: ACPI 1.0"
+    },
+    {
+      "trigger": "_TZD",
+      "contents": "_TZD",
+      "annotation": "Thermal Zone Devices",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of device names associated with a Thermal Zone"
+    },
+    {
+      "trigger": "_TZM",
+      "contents": "_TZM",
+      "annotation": "Thermal Zone Member",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a reference to the thermal zone of which a device is a member"
+    },
+    {
+      "trigger": "_TZP",
+      "contents": "_TZP",
+      "annotation": "Thermal Zone Polling",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a Thermal zone's polling frequency"
+    },
+    {
+      "trigger": "_UID",
+      "contents": "_UID",
+      "annotation": "Unique ID",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Return a device's unique persistent ID"
+    },
+    {
+      "trigger": "_UPC",
+      "contents": "_UPC",
+      "annotation": "USB Port Capabilities",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns a list of USB port capabilities"
+    },
+    {
+      "trigger": "_UPD",
+      "contents": "_UPD",
+      "annotation": "User Presence Detect",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns user detection information"
+    },
+    {
+      "trigger": "_UPP",
+      "contents": "_UPP",
+      "annotation": "User Presence Polling",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the recommended user presence polling interval"
+    },
+    {
+      "trigger": "_VAL",
+      "contents": "_VAL",
+      "annotation": "Pin Configuration Value",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_VEN",
+      "contents": "_VEN",
+      "annotation": "Vendor Data",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Resource Descriptor field"
+    },
+    {
+      "trigger": "_VPO",
+      "contents": "_VPO",
+      "annotation": "Video Post Options",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Returns the implemented video post options"
+    },
+    {
+      "trigger": "_WAK",
+      "contents": "_WAK",
+      "annotation": "Wake",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Inform AML that the system has just awakened"
+    },
+    {
+      "trigger": "_WPC",
+      "contents": "_WPC",
+      "annotation": "Wireless Power Calibration",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Calibrate power and notify wireless device"
+    },
+    {
+      "trigger": "_WPP",
+      "contents": "_WPP",
+      "annotation": "Wireless Power Polling",
+      "kind": [
+        "variable",
+        "p",
+        "Predefined name"
+      ],
+      "details": "Get recommended polling interval"
+    },
+    {
+      "trigger": "__DATE__",
+      "contents": "__DATE__",
+      "annotation": "iASL built-in macro",
+      "kind": [
+        "variable",
+        "m",
+        "Built-in macro"
+      ],
+      "details": "Predefined iASL macro <code>__DATE__</code>."
+    },
+    {
+      "trigger": "__FILE__",
+      "contents": "__FILE__",
+      "annotation": "iASL built-in macro",
+      "kind": [
+        "variable",
+        "m",
+        "Built-in macro"
+      ],
+      "details": "Predefined iASL macro <code>__FILE__</code>."
+    },
+    {
+      "trigger": "__IASL__",
+      "contents": "__IASL__",
+      "annotation": "iASL built-in macro",
+      "kind": [
+        "variable",
+        "m",
+        "Built-in macro"
+      ],
+      "details": "Predefined iASL macro <code>__IASL__</code>."
+    },
+    {
+      "trigger": "__LINE__",
+      "contents": "__LINE__",
+      "annotation": "iASL built-in macro",
+      "kind": [
+        "variable",
+        "m",
+        "Built-in macro"
+      ],
+      "details": "Predefined iASL macro <code>__LINE__</code>."
+    },
+    {
+      "trigger": "__METHOD__",
+      "contents": "__METHOD__",
+      "annotation": "iASL built-in macro",
+      "kind": [
+        "variable",
+        "m",
+        "Built-in macro"
+      ],
+      "details": "Predefined iASL macro <code>__METHOD__</code>."
+    },
+    {
+      "trigger": "__PATH__",
+      "contents": "__PATH__",
+      "annotation": "iASL built-in macro",
+      "kind": [
+        "variable",
+        "m",
+        "Built-in macro"
+      ],
+      "details": "Predefined iASL macro <code>__PATH__</code>."
+    }
+  ]
+}
