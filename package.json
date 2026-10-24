@@ -1,16 +1,16 @@
 {
   "name": "ASL-Syntax-Highlight",
-  "version": "1.1.1",
-  "description": "Sublime Text syntax highlighting for ACPI Source Language",
+  "version": "2.0.0",
+  "description": "Sublime Text 4 syntax highlighting and completions for ACPI Source Language (ASL)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fansaly/ASL-Syntax-Highlight"
+    "url": "https://github.com/Fansaly/ASL-Syntax-Highlight"
   },
   "bugs": {
-    "url": "https://github.com/fansaly/ASL-Syntax-Highlight/issues"
+    "url": "https://github.com/Fansaly/ASL-Syntax-Highlight/issues"
   },
   "engines": {
-    "subl": ">=3143"
+    "subl": ">=4000"
   },
   "license": "MIT"
 }

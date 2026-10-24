@@ -1,0 +1,10 @@
+ASL Syntax Highlight 2.0.0 requires Sublime Text 4.
+
+Changes:
+- Rewritten ASL syntax definition using Sublime Text 4 syntax version 2.
+- Case-insensitive ASL keyword matching.
+- Updated keyword, resource macro, flag, and predefined-name data from ACPI 6.6 / ACPICA.
+- Added syntax completions and snippets for declarations, operators, resource macros, predefined names, and preprocessor directives.
+- Added syntax tests and sample ASL fixtures.
+
+If the syntax does not update automatically, choose "ASL" from the syntax menu.

@@ -1,0 +1,5 @@
+* text=auto eol=lf
+
+/screenshot.png export-ignore
+/tests export-ignore
+/.editorconfig export-ignore
